@@ -1,17 +1,14 @@
 <?php
 
-/**
- * First Data REST Payment API Specification
- *
- * First Data REST API for payment features for 6.2.0 release
- */
-
 namespace FirstData\ApiClient;
 
 
 /**
  * Class RequestUtil
+ *
+ * @Category Class
  * @package FirstData\ApiClient
+ * @author brandon.garcia@firstdata.com
  */
 class RequestUtil
 {
