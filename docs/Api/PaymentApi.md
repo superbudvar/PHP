@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a name="refundTransaction"></a>
-# refundTransaction
+# **refundTransaction**
 > \FirstData\ApiClient\Model\TransactionResponse refundTransaction($transactionId, $payload)
 
 Return/Refund transaction
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a name="voidTransaction"></a>
-# voidTransaction
+# **voidTransaction**
 > \FirstData\ApiClient\Model\TransactionResponse voidTransaction($transactionId)
 
 Void transaction
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a name="createTransaction"></a>
-# createTransaction
+# **createTransaction**
 > \FirstData\ApiClient\Model\TransactionResponse createTransaction($payload)
 
 Primary transaction creation
