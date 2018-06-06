@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postAuthTransaction**](PaymentApi.md#postauthtransaction) | **POST** /payments/{transaction-id}/postauth | Postauth transaction
-[**refundTransaction**](PaymentApi.md#refundtransaction) | **POST** /payments/{transaction-id}/return | Return/Refund transaction
-[**voidTransaction**](PaymentApi.md#voidtransaction) | **POST** /payments/{transaction-id}/void | Void transaction
-[**createTransaction**](PaymentApi.md#createtransaction) | **POST** /payments | Primary transaction creation
+[**postAuthTransaction**](PaymentApi.md#postAuthTransaction) | **POST** /payments/{transaction-id}/postauth | Postauth transaction
+[**refundTransaction**](PaymentApi.md#refundTransaction) | **POST** /payments/{transaction-id}/return | Return/Refund transaction
+[**voidTransaction**](PaymentApi.md#voidTransaction) | **POST** /payments/{transaction-id}/void | Void transaction
+[**createTransaction**](PaymentApi.md#createTransaction) | **POST** /payments | Primary transaction creation
 
-
-# postAuthTransaction
+<a name="postAuthTransaction"></a>
+# **postAuthTransaction**
 > \FirstData\ApiClient\Model\CertificateCreationResponse postAuthTransaction($transactionId, $payload)
 
 Postauth transaction
@@ -31,10 +31,10 @@ $apiKey = 'apiKey_example';
 $apiInstance = FirstData\ApiClient\Api\PaymentApi::create($apiSecret, $apiKey);
 
 // string | Identifies the primary transaction
-$transactionId = 'transactionId_example'; 
+$transactionId = 'transactionId_example';
 
 // \FirstData\ApiClient\Model\SecondaryTransaction
-$payload = new \FirstData\ApiClient\Model\SecondaryTransaction(); 
+$payload = new \FirstData\ApiClient\Model\SecondaryTransaction();
 
 try {
     $result = $apiInstance->postAuthTransaction($transactionId, $payload);
@@ -63,6 +63,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+<a name="refundTransaction"></a>
 # refundTransaction
 > \FirstData\ApiClient\Model\TransactionResponse refundTransaction($transactionId, $payload)
 
@@ -87,7 +88,7 @@ $apiInstance = FirstData\ApiClient\Api\PaymentApi::create($apiSecret, $apiKey);
 $transactionId = 'transactionId_example';
 
 // \FirstData\ApiClient\Model\SecondaryTransaction
-$payload = new \FirstData\ApiClient\Model\SecondaryTransaction(); 
+$payload = new \FirstData\ApiClient\Model\SecondaryTransaction();
 
 try {
     $result = $apiInstance->refundTransaction($transactionId, $payload);
@@ -116,6 +117,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+<a name="voidTransaction"></a>
 # voidTransaction
 > \FirstData\ApiClient\Model\TransactionResponse voidTransaction($transactionId)
 
@@ -165,6 +167,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+<a name="createTransaction"></a>
 # createTransaction
 > \FirstData\ApiClient\Model\TransactionResponse createTransaction($payload)
 
