@@ -8,14 +8,7 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
     "license": "proprietary",
-    "authors": [
-        {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
-        }
-    ],
     "require": {
         "roave/security-advisories": "dev-master",
         "php": ">=7",
