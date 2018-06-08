@@ -161,9 +161,9 @@ class Order implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['orderId'] = $data['orderId'] ?? null;
-        $this->container['billing'] = $data['billing'] ?? null;
-        $this->container['shipping'] = $data['shipping'] ?? null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
+        $this->container['shipping'] = isset($data['shipping']) ? $data['shipping'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class Order implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

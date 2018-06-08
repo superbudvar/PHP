@@ -181,13 +181,13 @@ class Address implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['company'] = $data['company'] ?? null;
-        $this->container['address1'] = $data['address1'] ?? null;
-        $this->container['address2'] = $data['address2'] ?? null;
-        $this->container['locality'] = $data['locality'] ?? null;
-        $this->container['region'] = $data['region'] ?? null;
-        $this->container['postalCode'] = $data['postalCode'] ?? null;
-        $this->container['country'] = $data['country'] ?? null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
+        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -465,7 +465,7 @@ class Address implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

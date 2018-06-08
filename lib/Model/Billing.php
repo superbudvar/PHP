@@ -193,12 +193,12 @@ class Billing implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['personalNumber'] = $data['personalNumber'] ?? null;
-        $this->container['birthDate'] = $data['birthDate'] ?? null;
-        $this->container['gender'] = $data['gender'] ?? null;
-        $this->container['contact'] = $data['contact'] ?? null;
-        $this->container['address'] = $data['address'] ?? null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['personalNumber'] = isset($data['personalNumber']) ? $data['personalNumber'] : null;
+        $this->container['birthDate'] = isset($data['birthDate']) ? $data['birthDate'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
+        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
 
     /**
@@ -416,7 +416,7 @@ class Billing implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

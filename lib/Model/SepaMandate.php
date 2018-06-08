@@ -185,10 +185,10 @@ class SepaMandate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['reference'] = $data['reference'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
-        $this->container['signatureDate'] = $data['signatureDate'] ?? null;
-        $this->container['type'] = $data['type'] ?? 'SINGLE';
+        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['signatureDate'] = isset($data['signatureDate']) ? $data['signatureDate'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : 'SINGLE';
     }
 
     /**
@@ -365,7 +365,7 @@ class SepaMandate implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

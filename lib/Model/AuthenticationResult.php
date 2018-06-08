@@ -177,9 +177,9 @@ class AuthenticationResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['applePay'] = $data['applePay'] ?? null;
-        $this->container['secure3d'] = $data['secure3d'] ?? null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['applePay'] = isset($data['applePay']) ? $data['applePay'] : null;
+        $this->container['secure3d'] = isset($data['secure3d']) ? $data['secure3d'] : null;
     }
 
     /**
@@ -316,7 +316,7 @@ class AuthenticationResult implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

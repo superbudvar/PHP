@@ -181,10 +181,10 @@ class PaymentMethod implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['paymentCard'] = $data['paymentCard'] ?? null;
-        $this->container['sepaDirectDebit'] = $data['sepaDirectDebit'] ?? null;
-        $this->container['applePay'] = $data['applePay'] ?? null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['paymentCard'] = isset($data['paymentCard']) ? $data['paymentCard'] : null;
+        $this->container['sepaDirectDebit'] = isset($data['sepaDirectDebit']) ? $data['sepaDirectDebit'] : null;
+        $this->container['applePay'] = isset($data['applePay']) ? $data['applePay'] : null;
     }
 
     /**
@@ -348,7 +348,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

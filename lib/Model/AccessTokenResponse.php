@@ -184,10 +184,10 @@ class AccessTokenResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['accessToken'] = $data['accessToken'] ?? null;
-        $this->container['clientRequestId'] = $data['clientRequestId'] ?? null;
-        $this->container['apiTraceId'] = $data['apiTraceId'] ?? null;
-        $this->container['requestStatus'] = $data['requestStatus'] ?? null;
+        $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
+        $this->container['clientRequestId'] = isset($data['clientRequestId']) ? $data['clientRequestId'] : null;
+        $this->container['apiTraceId'] = isset($data['apiTraceId']) ? $data['apiTraceId'] : null;
+        $this->container['requestStatus'] = isset($data['requestStatus']) ? $data['requestStatus'] : null;
     }
 
     /**
@@ -348,7 +348,7 @@ class AccessTokenResponse implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

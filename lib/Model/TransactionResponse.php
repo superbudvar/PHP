@@ -276,23 +276,23 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clientRequestId'] = $data['clientRequestId'] ?? null;
-        $this->container['apiTraceId'] = $data['apiTraceId'] ?? null;
-        $this->container['ipgTransactionId'] = $data['ipgTransactionId'] ?? null;
-        $this->container['orderId'] = $data['orderId'] ?? null;
-        $this->container['transactionType'] = $data['transactionType'] ?? null;
-        $this->container['authorizationCode'] = $data['authorizationCode'] ?? null;
-        $this->container['avsResponse'] = $data['avsResponse'] ?? null;
-        $this->container['cardCodeValueResponse'] = $data['cardCodeValueResponse'] ?? null;
-        $this->container['brand'] = $data['brand'] ?? null;
-        $this->container['country'] = $data['country'] ?? null;
-        $this->container['terminalId'] = $data['terminalId'] ?? null;
-        $this->container['clientTransactionId'] = $data['clientTransactionId'] ?? null;
-        $this->container['transactionTime'] = $data['transactionTime'] ?? null;
-        $this->container['approvedAmount'] = $data['approvedAmount'] ?? null;
-        $this->container['transactionStatus'] = $data['transactionStatus'] ?? null;
-        $this->container['authenticationRedirect'] = $data['authenticationRedirect'] ?? null;
-        $this->container['error'] = $data['error'] ?? null;
+        $this->container['clientRequestId'] = isset($data['clientRequestId']) ? $data['clientRequestId'] : null;
+        $this->container['apiTraceId'] = isset($data['apiTraceId']) ? $data['apiTraceId'] : null;
+        $this->container['ipgTransactionId'] = isset($data['ipgTransactionId']) ? $data['ipgTransactionId'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
+        $this->container['authorizationCode'] = isset($data['authorizationCode']) ? $data['authorizationCode'] : null;
+        $this->container['avsResponse'] = isset($data['avsResponse']) ? $data['avsResponse'] : null;
+        $this->container['cardCodeValueResponse'] = isset($data['cardCodeValueResponse']) ? $data['cardCodeValueResponse'] : null;
+        $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
+        $this->container['clientTransactionId'] = isset($data['clientTransactionId']) ? $data['clientTransactionId'] : null;
+        $this->container['transactionTime'] = isset($data['transactionTime']) ? $data['transactionTime'] : null;
+        $this->container['approvedAmount'] = isset($data['approvedAmount']) ? $data['approvedAmount'] : null;
+        $this->container['transactionStatus'] = isset($data['transactionStatus']) ? $data['transactionStatus'] : null;
+        $this->container['authenticationRedirect'] = isset($data['authenticationRedirect']) ? $data['authenticationRedirect'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /**
@@ -783,7 +783,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

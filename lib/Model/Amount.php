@@ -161,9 +161,9 @@ class Amount implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = $data['total'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['components'] = $data['components'] ?? null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['components'] = isset($data['components']) ? $data['components'] : null;
     }
 
     /**
@@ -288,7 +288,7 @@ class Amount implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

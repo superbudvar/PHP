@@ -206,15 +206,15 @@ class AirlineTravelRoute implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['departureDate'] = $data['departureDate'] ?? null;
-        $this->container['origin'] = $data['origin'] ?? null;
-        $this->container['destination'] = $data['destination'] ?? null;
-        $this->container['carrierCode'] = $data['carrierCode'] ?? null;
-        $this->container['serviceClass'] = $data['serviceClass'] ?? null;
-        $this->container['stopoverType'] = $data['stopoverType'] ?? null;
-        $this->container['fareBasisCode'] = $data['fareBasisCode'] ?? null;
-        $this->container['departureTax'] = $data['departureTax'] ?? null;
-        $this->container['flightNumber'] = $data['flightNumber'] ?? null;
+        $this->container['departureDate'] = isset($data['departureDate']) ? $data['departureDate'] : null;
+        $this->container['origin'] = isset($data['origin']) ? $data['origin'] : null;
+        $this->container['destination'] = isset($data['destination']) ? $data['destination'] : null;
+        $this->container['carrierCode'] = isset($data['carrierCode']) ? $data['carrierCode'] : null;
+        $this->container['serviceClass'] = isset($data['serviceClass']) ? $data['serviceClass'] : null;
+        $this->container['stopoverType'] = isset($data['stopoverType']) ? $data['stopoverType'] : null;
+        $this->container['fareBasisCode'] = isset($data['fareBasisCode']) ? $data['fareBasisCode'] : null;
+        $this->container['departureTax'] = isset($data['departureTax']) ? $data['departureTax'] : null;
+        $this->container['flightNumber'] = isset($data['flightNumber']) ? $data['flightNumber'] : null;
     }
 
     /**
@@ -559,7 +559,7 @@ class AirlineTravelRoute implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

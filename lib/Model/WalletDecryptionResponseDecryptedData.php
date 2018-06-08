@@ -178,9 +178,9 @@ class WalletDecryptionResponseDecryptedData implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['transactionAmount'] = $data['transactionAmount'] ?? null;
-        $this->container['paymentCard'] = $data['paymentCard'] ?? null;
-        $this->container['requestStatus'] = $data['requestStatus'] ?? null;
+        $this->container['transactionAmount'] = isset($data['transactionAmount']) ? $data['transactionAmount'] : null;
+        $this->container['paymentCard'] = isset($data['paymentCard']) ? $data['paymentCard'] : null;
+        $this->container['requestStatus'] = isset($data['requestStatus']) ? $data['requestStatus'] : null;
     }
 
     /**
@@ -317,7 +317,7 @@ class WalletDecryptionResponseDecryptedData implements ModelInterface, ArrayAcce
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

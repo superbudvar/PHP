@@ -161,9 +161,9 @@ class SecondaryTransaction implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['storeId'] = $data['storeId'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['splitShipment'] = $data['splitShipment'] ?? null;
+        $this->container['storeId'] = isset($data['storeId']) ? $data['storeId'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['splitShipment'] = isset($data['splitShipment']) ? $data['splitShipment'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class SecondaryTransaction implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

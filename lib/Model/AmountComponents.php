@@ -181,13 +181,13 @@ class AmountComponents implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subtotal'] = $data['subtotal'] ?? null;
-        $this->container['vatAmount'] = $data['vatAmount'] ?? null;
-        $this->container['localTax'] = $data['localTax'] ?? null;
-        $this->container['shipping'] = $data['shipping'] ?? null;
-        $this->container['cashback'] = $data['cashback'] ?? null;
-        $this->container['tip'] = $data['tip'] ?? null;
-        $this->container['convenienceFee'] = $data['convenienceFee'] ?? null;
+        $this->container['subtotal'] = isset($data['subtotal']) ? $data['subtotal'] : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $data['vatAmount'] : null;
+        $this->container['localTax'] = isset($data['localTax']) ? $data['localTax'] : null;
+        $this->container['shipping'] = isset($data['shipping']) ? $data['shipping'] : null;
+        $this->container['cashback'] = isset($data['cashback']) ? $data['cashback'] : null;
+        $this->container['tip'] = isset($data['tip']) ? $data['tip'] : null;
+        $this->container['convenienceFee'] = isset($data['convenienceFee']) ? $data['convenienceFee'] : null;
     }
 
     /**
@@ -400,7 +400,7 @@ class AmountComponents implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

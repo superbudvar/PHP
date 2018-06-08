@@ -166,10 +166,10 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['phone'] = $data['phone'] ?? null;
-        $this->container['mobilePhone'] = $data['mobilePhone'] ?? null;
-        $this->container['fax'] = $data['fax'] ?? null;
-        $this->container['email'] = $data['email'] ?? null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
+        $this->container['fax'] = isset($data['fax']) ? $data['fax'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -348,7 +348,7 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

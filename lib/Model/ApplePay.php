@@ -185,11 +185,11 @@ class ApplePay implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['signature'] = $data['signature'] ?? null;
-        $this->container['header'] = $data['header'] ?? null;
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
-        $this->container['appId'] = $data['appId'] ?? null;
+        $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
+        $this->container['header'] = isset($data['header']) ? $data['header'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['appId'] = isset($data['appId']) ? $data['appId'] : null;
     }
 
     /**
@@ -377,7 +377,7 @@ class ApplePay implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

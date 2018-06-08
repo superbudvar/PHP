@@ -166,10 +166,10 @@ class BasketItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['unitPrice'] = $data['unitPrice'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class BasketItem implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

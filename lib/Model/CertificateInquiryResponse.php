@@ -189,11 +189,11 @@ class CertificateInquiryResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clientRequestId'] = $data['clientRequestId'] ?? null;
-        $this->container['apiTraceId'] = $data['apiTraceId'] ?? null;
-        $this->container['certificates'] = $data['certificates'] ?? null;
-        $this->container['requestStatus'] = $data['requestStatus'] ?? null;
-        $this->container['error'] = $data['error'] ?? null;
+        $this->container['clientRequestId'] = isset($data['clientRequestId']) ? $data['clientRequestId'] : null;
+        $this->container['apiTraceId'] = isset($data['apiTraceId']) ? $data['apiTraceId'] : null;
+        $this->container['certificates'] = isset($data['certificates']) ? $data['certificates'] : null;
+        $this->container['requestStatus'] = isset($data['requestStatus']) ? $data['requestStatus'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /**
@@ -378,7 +378,7 @@ class CertificateInquiryResponse implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

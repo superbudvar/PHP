@@ -157,8 +157,8 @@ class WalletDecryptionResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['decryptedData'] = $data['decryptedData'] ?? null;
-        $this->container['error'] = $data['error'] ?? null;
+        $this->container['decryptedData'] = isset($data['decryptedData']) ? $data['decryptedData'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /**
@@ -251,7 +251,7 @@ class WalletDecryptionResponse implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

@@ -187,14 +187,14 @@ class CarRental implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['agreementNumber'] = $data['agreementNumber'] ?? null;
-        $this->container['renterName'] = $data['renterName'] ?? null;
-        $this->container['returnCity'] = $data['returnCity'] ?? null;
-        $this->container['returnDate'] = $data['returnDate'] ?? null;
-        $this->container['pickupDate'] = $data['pickupDate'] ?? null;
-        $this->container['rentalClassId'] = $data['rentalClassId'] ?? null;
-        $this->container['extraCharges'] = $data['extraCharges'] ?? null;
-        $this->container['noShowIndicator'] = $data['noShowIndicator'] ?? null;
+        $this->container['agreementNumber'] = isset($data['agreementNumber']) ? $data['agreementNumber'] : null;
+        $this->container['renterName'] = isset($data['renterName']) ? $data['renterName'] : null;
+        $this->container['returnCity'] = isset($data['returnCity']) ? $data['returnCity'] : null;
+        $this->container['returnDate'] = isset($data['returnDate']) ? $data['returnDate'] : null;
+        $this->container['pickupDate'] = isset($data['pickupDate']) ? $data['pickupDate'] : null;
+        $this->container['rentalClassId'] = isset($data['rentalClassId']) ? $data['rentalClassId'] : null;
+        $this->container['extraCharges'] = isset($data['extraCharges']) ? $data['extraCharges'] : null;
+        $this->container['noShowIndicator'] = isset($data['noShowIndicator']) ? $data['noShowIndicator'] : null;
     }
 
     /**
@@ -469,7 +469,7 @@ class CarRental implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

@@ -172,11 +172,11 @@ class Certificate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['appLabel'] = $data['appLabel'] ?? null;
-        $this->container['walletProvider'] = $data['walletProvider'] ?? null;
-        $this->container['permissions'] = $data['permissions'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['appLabel'] = isset($data['appLabel']) ? $data['appLabel'] : null;
+        $this->container['walletProvider'] = isset($data['walletProvider']) ? $data['walletProvider'] : null;
+        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -355,7 +355,7 @@ class Certificate implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

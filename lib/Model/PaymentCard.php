@@ -206,15 +206,15 @@ class PaymentCard implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['number'] = $data['number'] ?? null;
-        $this->container['expiryDate'] = $data['expiryDate'] ?? null;
-        $this->container['cardCodeValue'] = $data['cardCodeValue'] ?? null;
-        $this->container['cardFunction'] = $data['cardFunction'] ?? 'CREDIT';
-        $this->container['cardholderName'] = $data['cardholderName'] ?? null;
-        $this->container['authenticationRequest'] = $data['authenticationRequest'] ?? null;
-        $this->container['brand'] = $data['brand'] ?? null;
-        $this->container['authenticationResult'] = $data['authenticationResult'] ?? null;
-        $this->container['enableTokenization'] = $data['enableTokenization'] ?? null;
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['expiryDate'] = isset($data['expiryDate']) ? $data['expiryDate'] : null;
+        $this->container['cardCodeValue'] = isset($data['cardCodeValue']) ? $data['cardCodeValue'] : null;
+        $this->container['cardFunction'] = isset($data['cardFunction']) ? $data['cardFunction'] : 'CREDIT';
+        $this->container['cardholderName'] = isset($data['cardholderName']) ? $data['cardholderName'] : null;
+        $this->container['authenticationRequest'] = isset($data['authenticationRequest']) ? $data['authenticationRequest'] : null;
+        $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
+        $this->container['authenticationResult'] = isset($data['authenticationResult']) ? $data['authenticationResult'] : null;
+        $this->container['enableTokenization'] = isset($data['enableTokenization']) ? $data['enableTokenization'] : null;
     }
 
     /**
@@ -498,7 +498,7 @@ class PaymentCard implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

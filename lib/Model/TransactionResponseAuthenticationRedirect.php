@@ -174,9 +174,9 @@ class TransactionResponseAuthenticationRedirect implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['targetUrl'] = $data['targetUrl'] ?? null;
-        $this->container['params'] = $data['params'] ?? null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['targetUrl'] = isset($data['targetUrl']) ? $data['targetUrl'] : null;
+        $this->container['params'] = isset($data['params']) ? $data['params'] : null;
     }
 
     /**
@@ -313,7 +313,7 @@ class TransactionResponseAuthenticationRedirect implements ModelInterface, Array
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

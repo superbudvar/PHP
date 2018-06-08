@@ -203,10 +203,10 @@ class AuthenticationResultSecure3d implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['verificationResponse'] = $data['verificationResponse'] ?? null;
-        $this->container['payerAuthenticationResponse'] = $data['payerAuthenticationResponse'] ?? null;
-        $this->container['authenticationValue'] = $data['authenticationValue'] ?? null;
-        $this->container['xid'] = $data['xid'] ?? null;
+        $this->container['verificationResponse'] = isset($data['verificationResponse']) ? $data['verificationResponse'] : null;
+        $this->container['payerAuthenticationResponse'] = isset($data['payerAuthenticationResponse']) ? $data['payerAuthenticationResponse'] : null;
+        $this->container['authenticationValue'] = isset($data['authenticationValue']) ? $data['authenticationValue'] : null;
+        $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
     }
 
     /**
@@ -417,7 +417,7 @@ class AuthenticationResultSecure3d implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

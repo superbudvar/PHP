@@ -156,8 +156,8 @@ class SplitShipment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalCount'] = $data['totalCount'] ?? null;
-        $this->container['finalShipment'] = $data['finalShipment'] ?? null;
+        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
+        $this->container['finalShipment'] = isset($data['finalShipment']) ? $data['finalShipment'] : null;
     }
 
     /**
@@ -250,7 +250,7 @@ class SplitShipment implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

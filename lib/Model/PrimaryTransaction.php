@@ -238,17 +238,17 @@ class PrimaryTransaction implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['transactionType'] = $data['transactionType'] ?? null;
-        $this->container['storeId'] = $data['storeId'] ?? null;
-        $this->container['clientTransactionId'] = $data['clientTransactionId'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['paymentMethod'] = $data['paymentMethod'] ?? null;
-        $this->container['order'] = $data['order'] ?? null;
-        $this->container['basketItems'] = $data['basketItems'] ?? null;
-        $this->container['splitShipment'] = $data['splitShipment'] ?? null;
-        $this->container['transactionOrigin'] = $data['transactionOrigin'] ?? 'ECOM';
-        $this->container['additionalDetails'] = $data['additionalDetails'] ?? null;
-        $this->container['industrySpecificExtensions'] = $data['industrySpecificExtensions'] ?? null;
+        $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
+        $this->container['storeId'] = isset($data['storeId']) ? $data['storeId'] : null;
+        $this->container['clientTransactionId'] = isset($data['clientTransactionId']) ? $data['clientTransactionId'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['basketItems'] = isset($data['basketItems']) ? $data['basketItems'] : null;
+        $this->container['splitShipment'] = isset($data['splitShipment']) ? $data['splitShipment'] : null;
+        $this->container['transactionOrigin'] = isset($data['transactionOrigin']) ? $data['transactionOrigin'] : 'ECOM';
+        $this->container['additionalDetails'] = isset($data['additionalDetails']) ? $data['additionalDetails'] : null;
+        $this->container['industrySpecificExtensions'] = isset($data['industrySpecificExtensions']) ? $data['industrySpecificExtensions'] : null;
     }
 
     /**
@@ -604,7 +604,7 @@ class PrimaryTransaction implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

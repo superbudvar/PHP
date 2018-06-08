@@ -172,11 +172,11 @@ class Lodging implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['arrivalDate'] = $data['arrivalDate'] ?? null;
-        $this->container['departureDate'] = $data['departureDate'] ?? null;
-        $this->container['folioNumber'] = $data['folioNumber'] ?? null;
-        $this->container['extraCharges'] = $data['extraCharges'] ?? null;
-        $this->container['noShowIndicator'] = $data['noShowIndicator'] ?? null;
+        $this->container['arrivalDate'] = isset($data['arrivalDate']) ? $data['arrivalDate'] : null;
+        $this->container['departureDate'] = isset($data['departureDate']) ? $data['departureDate'] : null;
+        $this->container['folioNumber'] = isset($data['folioNumber']) ? $data['folioNumber'] : null;
+        $this->container['extraCharges'] = isset($data['extraCharges']) ? $data['extraCharges'] : null;
+        $this->container['noShowIndicator'] = isset($data['noShowIndicator']) ? $data['noShowIndicator'] : null;
     }
 
     /**
@@ -352,7 +352,7 @@ class Lodging implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

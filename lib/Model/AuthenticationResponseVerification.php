@@ -174,9 +174,9 @@ class AuthenticationResponseVerification implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['mD'] = $data['mD'] ?? null;
-        $this->container['paRes'] = $data['paRes'] ?? null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['mD'] = isset($data['mD']) ? $data['mD'] : null;
+        $this->container['paRes'] = isset($data['paRes']) ? $data['paRes'] : null;
     }
 
     /**
@@ -313,7 +313,7 @@ class AuthenticationResponseVerification implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

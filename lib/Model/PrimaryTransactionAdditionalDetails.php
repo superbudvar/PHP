@@ -193,12 +193,12 @@ class PrimaryTransactionAdditionalDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['referenceNumber'] = $data['referenceNumber'] ?? null;
-        $this->container['comments'] = $data['comments'] ?? null;
-        $this->container['dynamicMerchantName'] = $data['dynamicMerchantName'] ?? null;
-        $this->container['invoiceNumber'] = $data['invoiceNumber'] ?? null;
-        $this->container['purchaseOrderNumber'] = $data['purchaseOrderNumber'] ?? null;
-        $this->container['recurringType'] = $data['recurringType'] ?? null;
+        $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
+        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['dynamicMerchantName'] = isset($data['dynamicMerchantName']) ? $data['dynamicMerchantName'] : null;
+        $this->container['invoiceNumber'] = isset($data['invoiceNumber']) ? $data['invoiceNumber'] : null;
+        $this->container['purchaseOrderNumber'] = isset($data['purchaseOrderNumber']) ? $data['purchaseOrderNumber'] : null;
+        $this->container['recurringType'] = isset($data['recurringType']) ? $data['recurringType'] : null;
     }
 
     /**
@@ -407,7 +407,7 @@ class PrimaryTransactionAdditionalDetails implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

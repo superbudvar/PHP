@@ -244,20 +244,20 @@ class Airline implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['passengerName'] = $data['passengerName'] ?? null;
-        $this->container['ticketNumber'] = $data['ticketNumber'] ?? null;
-        $this->container['issuingCarrier'] = $data['issuingCarrier'] ?? null;
-        $this->container['carrierName'] = $data['carrierName'] ?? null;
-        $this->container['travelAgencyIataCode'] = $data['travelAgencyIataCode'] ?? null;
-        $this->container['travelAgencyName'] = $data['travelAgencyName'] ?? null;
-        $this->container['airlinePlanNumber'] = $data['airlinePlanNumber'] ?? null;
-        $this->container['airlineInvoiceNumber'] = $data['airlineInvoiceNumber'] ?? null;
-        $this->container['reservationSystem'] = $data['reservationSystem'] ?? null;
-        $this->container['restricted'] = $data['restricted'] ?? null;
-        $this->container['travelRoute'] = $data['travelRoute'] ?? null;
-        $this->container['relatedTicketNumber'] = $data['relatedTicketNumber'] ?? null;
-        $this->container['ancillaryServiceCategory'] = $data['ancillaryServiceCategory'] ?? null;
-        $this->container['ticketPurchase'] = $data['ticketPurchase'] ?? null;
+        $this->container['passengerName'] = isset($data['passengerName']) ? $data['passengerName'] : null;
+        $this->container['ticketNumber'] = isset($data['ticketNumber']) ? $data['ticketNumber'] : null;
+        $this->container['issuingCarrier'] = isset($data['issuingCarrier']) ? $data['issuingCarrier'] : null;
+        $this->container['carrierName'] = isset($data['carrierName']) ? $data['carrierName'] : null;
+        $this->container['travelAgencyIataCode'] = isset($data['travelAgencyIataCode']) ? $data['travelAgencyIataCode'] : null;
+        $this->container['travelAgencyName'] = isset($data['travelAgencyName']) ? $data['travelAgencyName'] : null;
+        $this->container['airlinePlanNumber'] = isset($data['airlinePlanNumber']) ? $data['airlinePlanNumber'] : null;
+        $this->container['airlineInvoiceNumber'] = isset($data['airlineInvoiceNumber']) ? $data['airlineInvoiceNumber'] : null;
+        $this->container['reservationSystem'] = isset($data['reservationSystem']) ? $data['reservationSystem'] : null;
+        $this->container['restricted'] = isset($data['restricted']) ? $data['restricted'] : null;
+        $this->container['travelRoute'] = isset($data['travelRoute']) ? $data['travelRoute'] : null;
+        $this->container['relatedTicketNumber'] = isset($data['relatedTicketNumber']) ? $data['relatedTicketNumber'] : null;
+        $this->container['ancillaryServiceCategory'] = isset($data['ancillaryServiceCategory']) ? $data['ancillaryServiceCategory'] : null;
+        $this->container['ticketPurchase'] = isset($data['ticketPurchase']) ? $data['ticketPurchase'] : null;
     }
 
     /**
@@ -739,7 +739,7 @@ class Airline implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
