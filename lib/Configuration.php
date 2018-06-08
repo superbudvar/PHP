@@ -20,7 +20,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://localhost';
+    protected $host = 'https://api-qa.payeezy.com/globalApi/v1';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
