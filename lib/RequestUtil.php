@@ -1,6 +1,7 @@
 <?php
 
 namespace FirstData\ApiClient;
+
 use Ramsey\Uuid\Uuid;
 
 
