@@ -80,7 +80,6 @@ try {
     echo 'Exception when calling PaymentApi->postAuthTransaction: ', $e->getMessage(), PHP_EOL;
 }
 
-?>
 ```
 
 ## Documentation for API Endpoints
