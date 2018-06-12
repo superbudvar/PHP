@@ -72,6 +72,9 @@ $transactionId = 'transactionId_example';
 
 // \FirstData\ApiClient\Model\SecondaryTransaction
 $payload = new \FirstData\ApiClient\Model\SecondaryTransaction();
+// Initialize the model:
+//     $payload->setStoreId(...)
+//             ->set...(...);
 
 try {
     $result = $apiInstance->postAuthTransaction($transactionId, $payload);
