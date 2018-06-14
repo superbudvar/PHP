@@ -257,10 +257,10 @@ class PaymentApi
 
     /**
      * @param $path
-     * @param array|null $params
+     * @param array $params
      * @return string
      */
-    private function expandPath($path, array $params = null)
+    private function expandPath($path, array $params = [])
     {
         $serializedParams = \array_map('ObjectSerializer::toPathValue', $params);
         $newPath = (null === $params) ? $path : sprintf($path, ...$serializedParams);
