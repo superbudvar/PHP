@@ -42,7 +42,7 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PaymentApi->postAuthTransaction: ', $e->getMessage(), PHP_EOL;
 }
-?>
+
 ```
 
 ### Parameters

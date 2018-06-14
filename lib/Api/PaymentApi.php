@@ -262,7 +262,7 @@ class PaymentApi
      */
     private function expandPath($path, array $params = [])
     {
-        $serializedParams = \array_map('ObjectSerializer::toPathValue', $params);
+        $serializedParams = \array_map('\FirstData\ApiClient\ObjectSerializer::toPathValue', $params);
         $newPath = (null === $params) ? $path : sprintf($path, ...$serializedParams);
         return $this->config->getHost() . $newPath;
     }
