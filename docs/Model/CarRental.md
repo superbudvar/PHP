@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **returnDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **pickupDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **rentalClassId** | **string** |  | [optional] 
-**extraCharges** | [**\FirstData\ApiClient\Model\CarRentalExtraCharges[]**](CarRentalExtraCharges.md) |  | [optional] 
+**extraCharges** | [**\FirstData\FirstApi\Client\Model\CarRentalExtraCharges[]**](CarRentalExtraCharges.md) |  | [optional] 
 **noShowIndicator** | **bool** |  | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

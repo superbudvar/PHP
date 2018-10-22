@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | **string** | Existing mandate reference managed by a merchant. Also known as the Mandate ID. | [optional] 
-**url** | **string** | Valid URL pointing to the SEPA mandate (PDF / HTML format recommended) | [optional] 
-**signatureDate** | [**\DateTime**](\DateTime.md) | Date of mandate signature | [optional] 
-**type** | **string** | Sequence type of the mandate, defaults to &#39;SINGLE&#39; if not provided. | [optional] [default to 'SINGLE']
+**reference** | **string** | Existing mandate reference, managed by merchant. Must match [A-Za-z0-9:?/+(),. -]{1,35} and not start with two slashes (“//”). Also known as the Mandate ID | 
+**url** | **string** | Valid URL pointing to the SEPA mandate (PDF / HTML format recommended) | 
+**signatureDate** | [**\DateTime**](\DateTime.md) | Date of mandate signature. | 
+**type** | **string** | Sequence type of the direct debit. This defaults to &#39;SINGLE&#39; if not provided. | [default to 'SINGLE']
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

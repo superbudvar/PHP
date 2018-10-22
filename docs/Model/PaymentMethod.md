@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of payment method. PayPal can only do &#39;Credit&#39; as primary transactions with Order. Email is mandatory. PayPal secondary transactions are processed as any other secondary transactions. | 
-**paymentCard** | [**\FirstData\ApiClient\Model\PaymentCard**](PaymentCard.md) |  | [optional] 
-**sepaDirectDebit** | [**\FirstData\ApiClient\Model\SepaDirectDebit**](SepaDirectDebit.md) |  | [optional] 
-**applePay** | [**\FirstData\ApiClient\Model\ApplePay**](ApplePay.md) |  | [optional] 
+**type** | **string** | The type of payment method. Note that PayPal can only process a &#39;Credit&#39;  primary transaction with Order.Billing.Contact.email being mandatory. PayPal secondary transactions (void/return/postauth) are processed the same as any other secondary transactions. | 
+**paymentCard** | [**\FirstData\FirstApi\Client\Model\PaymentCard**](PaymentCard.md) |  | [optional] 
+**sepa** | [**\FirstData\FirstApi\Client\Model\Sepa**](Sepa.md) |  | [optional] 
+**payPal** | [**\FirstData\FirstApi\Client\Model\PayPal**](PayPal.md) |  | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
