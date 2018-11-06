@@ -91,13 +91,13 @@ class AuthenticationApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FirstData\FirstApi\Client\Model\AccessTokenResponse
      */
-    public function v1AuthenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+    public function v1AuthenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature = null)
     {
         list($response) = $this->v1AuthenticationAccessTokensPostWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
         return $response;
@@ -112,13 +112,13 @@ class AuthenticationApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FirstData\FirstApi\Client\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1AuthenticationAccessTokensPostWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+    public function v1AuthenticationAccessTokensPostWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\AccessTokenResponse';
         $request = $this->v1AuthenticationAccessTokensPostRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
@@ -231,12 +231,12 @@ class AuthenticationApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1AuthenticationAccessTokensPostAsync($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+    public function v1AuthenticationAccessTokensPostAsync($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature = null)
     {
         return $this->v1AuthenticationAccessTokensPostAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
             ->then(
@@ -255,12 +255,12 @@ class AuthenticationApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1AuthenticationAccessTokensPostAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+    public function v1AuthenticationAccessTokensPostAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\AccessTokenResponse';
         $request = $this->v1AuthenticationAccessTokensPostRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
@@ -309,12 +309,12 @@ class AuthenticationApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function v1AuthenticationAccessTokensPostRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+    protected function v1AuthenticationAccessTokensPostRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature = null)
     {
         // verify the required parameter 'contentType' is set
         if ($contentType === null) {
@@ -338,12 +338,6 @@ class AuthenticationApi
         if ($timestamp === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $timestamp when calling v1AuthenticationAccessTokensPost'
-            );
-        }
-        // verify the required parameter 'messageSignature' is set
-        if ($messageSignature === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $messageSignature when calling v1AuthenticationAccessTokensPost'
             );
         }
 

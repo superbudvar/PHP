@@ -91,18 +91,18 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FirstData\FirstApi\Client\Model\TransactionResponse
      */
-    public function performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
-        list($response) = $this->performPaymentPostAuthorisationWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        list($response) = $this->performPaymentPostAuthorisationWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
         return $response;
     }
 
@@ -115,19 +115,19 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FirstData\FirstApi\Client\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function performPaymentPostAuthorisationWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function performPaymentPostAuthorisationWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\TransactionResponse';
-        $request = $this->performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        $request = $this->performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -261,17 +261,17 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function performPaymentPostAuthorisationAsync($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function performPaymentPostAuthorisationAsync($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
-        return $this->performPaymentPostAuthorisationAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId)
+        return $this->performPaymentPostAuthorisationAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,18 +288,18 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function performPaymentPostAuthorisationAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function performPaymentPostAuthorisationAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\TransactionResponse';
-        $request = $this->performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        $request = $this->performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -345,15 +345,15 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    protected function performPaymentPostAuthorisationRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         // verify the required parameter 'contentType' is set
         if ($contentType === null) {
@@ -377,12 +377,6 @@ class OrderApi
         if ($timestamp === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $timestamp when calling performPaymentPostAuthorisation'
-            );
-        }
-        // verify the required parameter 'messageSignature' is set
-        if ($messageSignature === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $messageSignature when calling performPaymentPostAuthorisation'
             );
         }
         // verify the required parameter 'orderId' is set
@@ -515,18 +509,18 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \FirstData\FirstApi\Client\Model\TransactionResponse
      */
-    public function returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
-        list($response) = $this->returnTransactionWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        list($response) = $this->returnTransactionWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
         return $response;
     }
 
@@ -539,19 +533,19 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \FirstData\FirstApi\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \FirstData\FirstApi\Client\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnTransactionWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function returnTransactionWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\TransactionResponse';
-        $request = $this->returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        $request = $this->returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -685,17 +679,17 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnTransactionAsync($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function returnTransactionAsync($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
-        return $this->returnTransactionAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId)
+        return $this->returnTransactionAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -712,18 +706,18 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnTransactionAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    public function returnTransactionAsyncWithHttpInfo($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         $returnType = '\FirstData\FirstApi\Client\Model\TransactionResponse';
-        $request = $this->returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+        $request = $this->returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -769,15 +763,15 @@ class OrderApi
      * @param  string $clientRequestId A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. (required)
      * @param  string $apiKey (required)
      * @param  int $timestamp Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). (required)
-     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (required)
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  \FirstData\FirstApi\Client\Model\SecondaryTransaction $payload (required)
+     * @param  string $messageSignature Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. (optional)
      * @param  string $storeId an optional outlet id for clients that support multiple store in the same developer app (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId = null)
+    protected function returnTransactionRequest($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature = null, $storeId = null)
     {
         // verify the required parameter 'contentType' is set
         if ($contentType === null) {
@@ -801,12 +795,6 @@ class OrderApi
         if ($timestamp === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $timestamp when calling returnTransaction'
-            );
-        }
-        // verify the required parameter 'messageSignature' is set
-        if ($messageSignature === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $messageSignature when calling returnTransaction'
             );
         }
         // verify the required parameter 'orderId' is set

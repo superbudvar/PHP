@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **performPaymentPostAuthorisation**
-> \FirstData\FirstApi\Client\Model\TransactionResponse performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId)
+> \FirstData\FirstApi\Client\Model\TransactionResponse performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId)
 
 Use this to capture/complete a transaction. Partial postauths are allowed.
 
@@ -29,13 +29,13 @@ $contentType = "application/json"; // string | content type
 $clientRequestId = "clientRequestId_example"; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
 $apiKey = "apiKey_example"; // string | 
 $timestamp = 789; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$messageSignature = "messageSignature_example"; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $orderId = "orderId_example"; // string | Gateway order identifier as returned in the parameter orderId
 $payload = new \FirstData\FirstApi\Client\Model\SecondaryTransaction(); // \FirstData\FirstApi\Client\Model\SecondaryTransaction | 
+$messageSignature = "messageSignature_example"; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $storeId = "storeId_example"; // string | an optional outlet id for clients that support multiple store in the same developer app
 
 try {
-    $result = $apiInstance->performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+    $result = $apiInstance->performPaymentPostAuthorisation($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->performPaymentPostAuthorisation: ', $e->getMessage(), PHP_EOL;
@@ -51,9 +51,9 @@ Name | Type | Description  | Notes
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
  **apiKey** | **string**|  |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
  **orderId** | **string**| Gateway order identifier as returned in the parameter orderId |
  **payload** | [**\FirstData\FirstApi\Client\Model\SecondaryTransaction**](../Model/SecondaryTransaction.md)|  |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **storeId** | **string**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
 
 ### Return type
@@ -72,7 +72,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **returnTransaction**
-> \FirstData\FirstApi\Client\Model\TransactionResponse returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId)
+> \FirstData\FirstApi\Client\Model\TransactionResponse returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId)
 
 Use this to return/refund on the order. Partial returns are allowed.
 
@@ -92,13 +92,13 @@ $contentType = "application/json"; // string | content type
 $clientRequestId = "clientRequestId_example"; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
 $apiKey = "apiKey_example"; // string | 
 $timestamp = 789; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$messageSignature = "messageSignature_example"; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $orderId = "orderId_example"; // string | Gateway order identifier as returned in the parameter orderId
 $payload = new \FirstData\FirstApi\Client\Model\SecondaryTransaction(); // \FirstData\FirstApi\Client\Model\SecondaryTransaction | 
+$messageSignature = "messageSignature_example"; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $storeId = "storeId_example"; // string | an optional outlet id for clients that support multiple store in the same developer app
 
 try {
-    $result = $apiInstance->returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $orderId, $payload, $storeId);
+    $result = $apiInstance->returnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $payload, $messageSignature, $storeId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->returnTransaction: ', $e->getMessage(), PHP_EOL;
@@ -114,9 +114,9 @@ Name | Type | Description  | Notes
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
  **apiKey** | **string**|  |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
  **orderId** | **string**| Gateway order identifier as returned in the parameter orderId |
  **payload** | [**\FirstData\FirstApi\Client\Model\SecondaryTransaction**](../Model/SecondaryTransaction.md)|  |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **storeId** | **string**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
 
 ### Return type
