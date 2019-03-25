@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Item ID | [optional] 
-**description** | **string** | Referenced parent Business Entity ID in master database for the outlets // COPY-PASTE ERROR? | [optional] 
+**description** | **string** | Item in the basket | [optional] 
 **unitPrice** | [**\FirstData\FirstApi\Client\Model\Amount**](Amount.md) |  | [optional] 
 **count** | **int** | Total quantity of items | [optional] 
 

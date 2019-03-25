@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | **string** | Existing mandate reference, managed by merchant. Must match [A-Za-z0-9:?/+(),. -]{1,35} and not start with two slashes (“//”). Also known as the Mandate ID | 
+**reference** | **string** | Existing mandate reference, managed by merchant. Must match [A-Za-z0-9:?/+(),. -]{1,35} and not start with two slashes (\&quot;//\&quot;). Also known as the Mandate ID | 
 **url** | **string** | Valid URL pointing to the SEPA mandate (PDF / HTML format recommended) | 
 **signatureDate** | [**\DateTime**](\DateTime.md) | Date of mandate signature. | 
 **type** | **string** | Sequence type of the direct debit. This defaults to &#39;SINGLE&#39; if not provided. | [default to 'SINGLE']

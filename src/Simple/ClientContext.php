@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bgarcia
- * Date: 9/11/18
- * Time: 12:01 PM
- */
 
 namespace FirstData\FirstApi\Client\Simple;
 
@@ -19,13 +13,28 @@ use FirstData\FirstApi\Client\HeaderSelector;
  */
 class ClientContext
 {
+    const CONTENT_TYPE = 'application/json';
+    const DEFAULT_BASE_PATH = 'https://cert.api.firstdata.com/gateway';
+
     /**
-     * @param MerchantCredentials $creds
+     * @param  MerchantCredentials $creds
+     * @param  string $apiBasePath
+     * @param  string $defaultRegion
+     * @param  string $defaultStoreId
      * @return ClientContext
      */
-    public static function create(MerchantCredentials $creds)
+    public static function create(MerchantCredentials $creds, $apiBasePath = self::DEFAULT_BASE_PATH, $defaultRegion = null, $defaultStoreId = null)
     {
-        return new self(new Client(), new Configuration(), new HeaderSelector(), $creds);
+        $context = new self(
+          new Client(),
+          new Configuration(),
+          new HeaderSelector(),
+          $creds,
+          $defaultRegion,
+          $defaultStoreId
+        );
+        $context->setApiBasePath($apiBasePath);
+        return $context;
     }
 
     /** @var  ClientInterface */
@@ -40,23 +49,35 @@ class ClientContext
     /** @var  MerchantCredentials */
     private $credentials;
 
+    /** @var  string */
+    private $defaultRegion;
+
+    /** @var  string */
+    private $defaultStoreId;
+
     /**
      * ClientContext constructor.
-     * @param ClientInterface $client
-     * @param Configuration $config
-     * @param HeaderSelector $selector
-     * @param MerchantCredentials $credentials
+     * @param  ClientInterface $client
+     * @param  Configuration $config
+     * @param  HeaderSelector $selector
+     * @param  MerchantCredentials $credentials
+     * @param  string $defaultRegion
+     * @param  string $defaultStoreId
      */
     public function __construct(
         ClientInterface $client,
         Configuration $config,
         HeaderSelector $selector,
-        MerchantCredentials $credentials
+        MerchantCredentials $credentials,
+        $defaultRegion = null,
+        $defaultStoreId = null
     ) {
         $this->client = $client;
         $this->config = $config;
         $this->selector = $selector;
         $this->credentials = $credentials;
+        $this->defaultRegion = $defaultRegion;
+        $this->defaultStoreId = $defaultStoreId;
     }
 
     /**
@@ -89,5 +110,29 @@ class ClientContext
     public function getCredentials()
     {
         return $this->credentials;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDefaultRegion()
+    {
+        return $this->defaultRegion;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDefaultStoreId()
+    {
+        return $this->defaultStoreId;
+    }
+
+    /**
+     * @param  string $basePath
+     */
+    public function setApiBasePath($basePath)
+    {
+        $this->config->setHost($basePath);
     }
 }

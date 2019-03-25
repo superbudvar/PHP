@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orderId** | **string** |  | [optional] 
+**orderId** | **string** | Client Order ID if supplied by client. | [optional] 
 **billing** | [**\FirstData\FirstApi\Client\Model\Billing**](Billing.md) |  | [optional] 
 **shipping** | [**\FirstData\FirstApi\Client\Model\Shipping**](Shipping.md) |  | [optional] 
 

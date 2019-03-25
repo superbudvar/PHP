@@ -1,6 +1,6 @@
 {
     "name": "first-data/gateway",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "PHP SDK to be used with a First Data Gateway account. This SDK has been created and packaged to offer the easiest way to integrate your application into the First Data Gateway. This SDK gives you the ability to run transactions such as sales, preauthorizations, postauthorizations, credits, voids, and returns; transaction inquiries; setting up scheduled payments and much more.",
     "keywords": ["Payment", "Gateway", "SDK", "Developer", "First Data"],
     "homepage": "https://docs.firstdata.com/org/gateway",
@@ -19,15 +19,7 @@
         "guzzlehttp/guzzle": "^6.2",
         "ramsey/uuid": "^3.7"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
-    },
     "autoload": {
         "psr-4": { "FirstData\\FirstApi\\Client\\" : "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "FirstData\\FirstApi\\Client\\" : "test/" }
     }
 }

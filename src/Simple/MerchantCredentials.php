@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bgarcia
- * Date: 9/11/18
- * Time: 12:06 PM
- */
 
 namespace FirstData\FirstApi\Client\Simple;
 
@@ -22,8 +16,8 @@ class MerchantCredentials
 
     /**
      * MerchantCredentials constructor.
-     * @param string $apiSecret
-     * @param string $apiKey
+     * @param  string $apiSecret
+     * @param  string $apiKey
      */
     public function __construct($apiSecret, $apiKey)
     {
