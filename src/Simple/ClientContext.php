@@ -14,7 +14,7 @@ use FirstData\FirstApi\Client\HeaderSelector;
 class ClientContext
 {
     const CONTENT_TYPE = 'application/json';
-    const DEFAULT_BASE_PATH = 'https://cert.api.firstdata.com/gateway';
+    const DEFAULT_BASE_PATH = 'https://cert.api.firstdata.com/gateway/v2';
 
     /**
      * @param  MerchantCredentials $creds
@@ -78,6 +78,14 @@ class ClientContext
         $this->credentials = $credentials;
         $this->defaultRegion = $defaultRegion;
         $this->defaultStoreId = $defaultStoreId;
+    }
+
+    /**
+     * @return ClientFactory
+     */
+    public function getFactory()
+    {
+        return new ClientFactory($this);
     }
 
     /**

@@ -1,11 +1,11 @@
 # FirstData\FirstApi\Client\PaymentTokenApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://cert.api.firstdata.com/gateway/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPaymentToken**](PaymentTokenApi.md#createPaymentToken) | **POST** /v1/payment-tokens | Create a payment token from a payment card.
-[**deletePaymentToken**](PaymentTokenApi.md#deletePaymentToken) | **DELETE** /v1/payment-tokens/{token-id} | Delete a payment token.
+[**createPaymentToken**](PaymentTokenApi.md#createPaymentToken) | **POST** /payment-tokens | Create a payment token from a payment card.
+[**deletePaymentToken**](PaymentTokenApi.md#deletePaymentToken) | **DELETE** /payment-tokens/{token-id} | Delete a payment token.
 
 
 # **createPaymentToken**
@@ -25,14 +25,14 @@ $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = 'application/json'; // string | content type
+$contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
+$apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$paymentTokenizationRequest = new \FirstData\FirstApi\Client\Model\PaymentTokenizationRequest(); // \FirstData\FirstApi\Client\Model\PaymentTokenizationRequest | 
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+$paymentTokenizationRequest = new \FirstData\FirstApi\Client\Model\PaymentTokenizationRequest(); // \FirstData\FirstApi\Client\Model\PaymentTokenizationRequest | Accepted request types: PaymentCardPaymentTokenizationRequest and ReferencedOrderPaymentTokenizationRequest.
+$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $authorization = 'authorization_example'; // string | The access token previously generated with the access-tokens call. Use the format 'Bearer {access-token}'.
-$region = 'region_example'; // string | The region where client wants to process the transaction
+$region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 
 try {
     $result = $apiInstance->createPaymentToken($contentType, $clientRequestId, $apiKey, $timestamp, $paymentTokenizationRequest, $messageSignature, $authorization, $region);
@@ -47,14 +47,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
+ **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
+ **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **paymentTokenizationRequest** | [**\FirstData\FirstApi\Client\Model\PaymentTokenizationRequest**](../Model/PaymentTokenizationRequest.md)|  |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **paymentTokenizationRequest** | [**\FirstData\FirstApi\Client\Model\PaymentTokenizationRequest**](../Model/PaymentTokenizationRequest.md)| Accepted request types: PaymentCardPaymentTokenizationRequest and ReferencedOrderPaymentTokenizationRequest. |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **authorization** | **string**| The access token previously generated with the access-tokens call. Use the format &#39;Bearer {access-token}&#39;. | [optional]
- **region** | **string**| The region where client wants to process the transaction | [optional]
+ **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
 
 ### Return type
 
@@ -88,14 +88,14 @@ $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = 'application/json'; // string | content type
+$contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
+$apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$tokenId = 'tokenId_example'; // string | Identifies a payment token
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+$tokenId = 'tokenId_example'; // string | Identifies a payment token.
+$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $authorization = 'authorization_example'; // string | The access token previously generated with the access-tokens call. Use the format 'Bearer {access-token}'.
-$region = 'region_example'; // string | The region where client wants to process the transaction
+$region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 $storeId = 'storeId_example'; // string | 
 
 try {
@@ -111,14 +111,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
+ **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
+ **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **tokenId** | **string**| Identifies a payment token |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **tokenId** | **string**| Identifies a payment token. |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **authorization** | **string**| The access token previously generated with the access-tokens call. Use the format &#39;Bearer {access-token}&#39;. | [optional]
- **region** | **string**| The region where client wants to process the transaction | [optional]
+ **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
  **storeId** | **string**|  | [optional]
 
 ### Return type

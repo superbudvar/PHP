@@ -4,8 +4,8 @@ namespace FirstData\FirstApi\Client\Simple;
 
 use FirstData\FirstApi\Client\ApiException;
 use FirstData\FirstApi\Client\Model\ErrorResponse;
-use FirstData\FirstApi\Client\Model\PaymentTokenizationRequest;
 use FirstData\FirstApi\Client\Model\TransactionResponse;
+use FirstData\FirstApi\Client\Model\CardVerificationRequest;
 
 /**
  * Class CardVerificationApi
@@ -29,13 +29,13 @@ class CardVerificationApi extends ApiWrapper
     /**
      * Operation verifyCard
      *
-     * @param  PaymentTokenizationRequest $payload
+     * @param  CardVerificationRequest $payload
      * @param  string $region The region where client wants to process the transaction (optional)
      * @throws ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function verifyCard(PaymentTokenizationRequest $payload, $region = null)
+    public function verifyCard(CardVerificationRequest $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);

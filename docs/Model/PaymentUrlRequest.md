@@ -5,12 +5,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **storeId** | **string** | An optional Outlet ID for clients that support multiple stores in the same developer app. | [optional] 
 **clientLocale** | [**\FirstData\FirstApi\Client\Model\ClientLocale**](ClientLocale.md) |  | [optional] 
-**amount** | [**\FirstData\FirstApi\Client\Model\Amount**](Amount.md) |  | 
+**transactionAmount** | [**\FirstData\FirstApi\Client\Model\Amount**](Amount.md) |  | [optional] 
 **transactionType** | [**\FirstData\FirstApi\Client\Model\TransactionType**](TransactionType.md) |  | 
-**orderId** | **string** | Client Order ID if supplied by client, otherwise the Order ID. | [optional] 
+**orderId** | **string** | Client order ID if supplied by client, otherwise the order ID. | [optional] 
 **billing** | [**\FirstData\FirstApi\Client\Model\Billing**](Billing.md) |  | [optional] 
 **shipping** | [**\FirstData\FirstApi\Client\Model\Shipping**](Shipping.md) |  | [optional] 
-**transactionNotificationURL** | **string** | URL for notifying merchant with payment result. | [optional] 
+**transactionNotificationURL** | **string** | URL for notifying merchant of payment result. | [optional] 
 **expiration** | **int** | Time until payment URL expires. | [optional] 
 **authenticateTransaction** | **bool** | If 3D secure should be applied. | [optional] 
 **dynamicMerchantName** | **string** | Dynamic merchant name for the cardholder&#39;s statement. | [optional] 

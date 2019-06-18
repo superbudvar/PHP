@@ -1,18 +1,17 @@
 # FirstData\FirstApi\Client\OrderApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://cert.api.firstdata.com/gateway/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**orderInquiry**](OrderApi.md#orderInquiry) | **GET** /v1/orders/{order-id} | Retrieve the state of an order
-[**orderPostAuth**](OrderApi.md#orderPostAuth) | **POST** /v1/orders/{order-id}/postauth | Capture/complete an already existing order.
-[**orderReturnTransaction**](OrderApi.md#orderReturnTransaction) | **POST** /v1/orders/{order-id}/return | Return/refund an order.
+[**orderInquiry**](OrderApi.md#orderInquiry) | **GET** /orders/{order-id} | Retrieve the state of an order.
+[**submitSecondaryTransactionFromOrder**](OrderApi.md#submitSecondaryTransactionFromOrder) | **POST** /orders/{order-id} | Perform return or postAuth secondary transactions.
 
 
 # **orderInquiry**
 > \FirstData\FirstApi\Client\Model\OrderResponse orderInquiry($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $messageSignature, $region, $storeId)
 
-Retrieve the state of an order
+Retrieve the state of an order.
 
 Use this query to get the current state of an existing order.
 
@@ -26,14 +25,14 @@ $apiInstance = new FirstData\FirstApi\Client\Api\OrderApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = 'application/json'; // string | content type
+$contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
+$apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-$region = 'region_example'; // string | The region where client wants to process the transaction
-$storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app
+$orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId.
+$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+$region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+$storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app.
 
 try {
     $result = $apiInstance->orderInquiry($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $messageSignature, $region, $storeId);
@@ -48,14 +47,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
+ **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
+ **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **orderId** | **string**| Gateway order identifier as returned in the parameter orderId |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
- **region** | **string**| The region where client wants to process the transaction | [optional]
- **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app | [optional]
+ **orderId** | **string**| Gateway order identifier as returned in the parameter orderId. |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
+ **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app. | [optional]
 
 ### Return type
 
@@ -72,77 +71,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPostAuth**
-> \FirstData\FirstApi\Client\Model\TransactionResponse orderPostAuth($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region, $storeId)
+# **submitSecondaryTransactionFromOrder**
+> \FirstData\FirstApi\Client\Model\TransactionResponse submitSecondaryTransactionFromOrder($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region)
 
-Capture/complete an already existing order.
+Perform return or postAuth secondary transactions.
 
-Use this to capture/complete an order. Postauths and partial postauths are allowed.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new FirstData\FirstApi\Client\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$contentType = 'application/json'; // string | content type
-$clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
-$timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId
-$secondaryTransaction = new \FirstData\FirstApi\Client\Model\SecondaryTransaction(); // \FirstData\FirstApi\Client\Model\SecondaryTransaction | 
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-$region = 'region_example'; // string | The region where client wants to process the transaction
-$storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app
-
-try {
-    $result = $apiInstance->orderPostAuth($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region, $storeId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPostAuth: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
- **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
- **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **orderId** | **string**| Gateway order identifier as returned in the parameter orderId |
- **secondaryTransaction** | [**\FirstData\FirstApi\Client\Model\SecondaryTransaction**](../Model/SecondaryTransaction.md)|  |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
- **region** | **string**| The region where client wants to process the transaction | [optional]
- **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app | [optional]
-
-### Return type
-
-[**\FirstData\FirstApi\Client\Model\TransactionResponse**](../Model/TransactionResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **orderReturnTransaction**
-> \FirstData\FirstApi\Client\Model\TransactionResponse orderReturnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region, $storeId)
-
-Return/refund an order.
-
-Use this for Returns of an existing order. Partial Returns are allowed.
+Use this to perform a postAuth or return secondary transaction using order ID. Partial postAuths and returns are allowed.
 
 ### Example
 ```php
@@ -154,21 +88,20 @@ $apiInstance = new FirstData\FirstApi\Client\Api\OrderApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = 'application/json'; // string | content type
+$contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
+$apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId
-$secondaryTransaction = new \FirstData\FirstApi\Client\Model\SecondaryTransaction(); // \FirstData\FirstApi\Client\Model\SecondaryTransaction | 
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-$region = 'region_example'; // string | The region where client wants to process the transaction
-$storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app
+$orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId.
+$secondaryTransaction = new \FirstData\FirstApi\Client\Model\SecondaryTransaction(); // \FirstData\FirstApi\Client\Model\SecondaryTransaction | Accepted request types: PostAuthTransaction, VoidTransaction, and ReturnTransaction.
+$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+$region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 
 try {
-    $result = $apiInstance->orderReturnTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region, $storeId);
+    $result = $apiInstance->submitSecondaryTransactionFromOrder($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderReturnTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->submitSecondaryTransactionFromOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -177,15 +110,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
+ **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
+ **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **orderId** | **string**| Gateway order identifier as returned in the parameter orderId |
- **secondaryTransaction** | [**\FirstData\FirstApi\Client\Model\SecondaryTransaction**](../Model/SecondaryTransaction.md)|  |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
- **region** | **string**| The region where client wants to process the transaction | [optional]
- **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app | [optional]
+ **orderId** | **string**| Gateway order identifier as returned in the parameter orderId. |
+ **secondaryTransaction** | [**\FirstData\FirstApi\Client\Model\SecondaryTransaction**](../Model/SecondaryTransaction.md)| Accepted request types: PostAuthTransaction, VoidTransaction, and ReturnTransaction. |
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
 
 ### Return type
 

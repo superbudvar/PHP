@@ -76,12 +76,7 @@ class PaymentTokenApi extends ApiWrapper
      */
     public function deletePaymentToken($tokenId, $authorization = null, $region = null, $storeId = null)
     {
-        if (isset($authorization)) {
-          $headers = $this->genHeaders();
-        } else {
-          $strPayload = $this->serialize($payload);
-          $headers = $this->genHeaders($strPayload);
-        }
+        $headers = $this->genHeaders();
         return $this->client->deletePaymentToken(
             $headers->getContentType(),
             $headers->getClientRequestId(),

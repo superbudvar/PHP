@@ -57,9 +57,9 @@ class OrderApi extends ApiWrapper
     }
 
     /**
-     * Operation orderPostAuth
+     * Secondary Operations
      *
-     * Capture/complete an already existing order.
+     * Return and PostAuth on an order.
      *
      * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
      * @param  SecondaryTransaction $payload payload (required)
@@ -70,11 +70,12 @@ class OrderApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function orderPostAuth($orderId, SecondaryTransaction $payload, $region = null, $storeId = null)
+   
+    public function submitSecondaryTransaction($orderId, SecondaryTransaction $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
-        return $this->client->orderPostAuth(
+        return $this->client->submitSecondaryTransactionFromOrder(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
@@ -82,36 +83,8 @@ class OrderApi extends ApiWrapper
             $orderId,
             $payload,
             $headers->getMessageSignature(),
-            $region ?? $this->getDefaultRegion(),
-            $storeId ?? $this->getDefaultStoreId()
+            $region ?? $this->getDefaultRegion()
         );
-    }
 
-    /**
-     * Operation orderReturnTransaction
-     *
-     * Return/refund an order.
-     *
-     * @param  string $orderId Gateway order identifier as returned in the parameter orderId (required)
-     * @param  SecondaryTransaction $payload payload (required)
-     * @param  string $region The region where client wants to process the transaction (optional)
-     * @param  string $storeId An optional outlet ID for clients that support multiple stores in the same developer app (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     * @return TransactionResponse|ErrorResponse
-     */
-    public function orderReturnTransaction($orderId, SecondaryTransaction $payload, $region = null, $storeId = null)
-    {
-        $strPayload = $this->serialize($payload);
-        $headers = $this->genHeaders($strPayload);
-        return $this->client->orderReturnTransaction(
-            $headers->getContentType(),
-            $headers->getClientRequestId(),
-            $orderId,
-            $payload,
-            $region ?? $this->getDefaultRegion(),
-            $storeId ?? $this->getDefaultStoreId()
-        );
     }
 }

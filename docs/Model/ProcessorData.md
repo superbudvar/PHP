@@ -3,13 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**referenceNumber** | **string** |  | [optional] 
-**authorizationCode** | **string** |  | [optional] 
-**responseCode** | **string** |  | [optional] 
-**associationResponseCode** | **string** |  | [optional] 
-**responseMessage** | **string** |  | [optional] 
+**referenceNumber** | **string** | Reference transaction ID. | [optional] 
+**authorizationCode** | **string** | Code returned to confirm transaction. | [optional] 
+**responseCode** | **string** | Response code from endpoints. | [optional] 
+**network** | **string** | Network used for transaction. | [optional] 
+**associationResponseCode** | **string** | Raw response code from issuer. | [optional] 
+**responseMessage** | **string** | Message returned from endpoints. | [optional] 
 **avsResponse** | [**\FirstData\FirstApi\Client\Model\AVSResponse**](AVSResponse.md) |  | [optional] 
-**securityCodeResponse** | **string** |  | [optional] 
+**securityCodeResponse** | **string** | Code returned for CVV. | [optional] 
+**merchantAdviceCodeIndicator** | **string** | Code to map merchant advice code to ISO specification. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,7 +3,7 @@
 namespace FirstData\FirstApi\Client\Simple;
 
 use FirstData\FirstApi\Client\ApiException;
-use FirstData\FirstApi\Client\Model\AuthenticationResponseVerificationRequest;
+use FirstData\FirstApi\Client\Model\AuthenticationVerificationRequest;
 use FirstData\FirstApi\Client\Model\ErrorResponse;
 use FirstData\FirstApi\Client\Model\PrimaryTransaction;
 use FirstData\FirstApi\Client\Model\SecondaryTransaction;
@@ -41,7 +41,7 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function finalizeSecureTransaction($transactionId, AuthenticationResponseVerificationRequest $payload, $region = null)
+    public function finalizeSecureTransaction($transactionId, AuthenticationVerificationRequest $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
@@ -58,37 +58,6 @@ class PaymentApi extends ApiWrapper
     }
 
     /**
-     * Operation performPaymentPostAuthorisation
-     *
-     * Capture/complete a transaction.
-     *
-     * @param  string $transactionId Gateway transaction identifier as returned in the parameter ipgTransactionId (required)
-     * @param  SecondaryTransaction $payload payload (required)
-     * @param  string $region The region where client wants to process the transaction (optional)
-     * @param  string $storeId An optional outlet ID for clients that support multiple stores in the same developer app (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     * @return TransactionResponse|ErrorResponse
-     */
-    public function performPaymentPostAuthorisation($transactionId, SecondaryTransaction $payload, $region = null, $storeId = null)
-    {
-        $strPayload = $this->serialize($payload);
-        $headers = $this->genHeaders($strPayload);
-        return $this->client->performPaymentPostAuthorisation(
-            $headers->getContentType(),
-            $headers->getClientRequestId(),
-            $headers->getApiKey(),
-            $headers->getTimestamp(),
-            $transactionId,
-            $payload,
-            $headers->getMessageSignature(),
-            $region ?? $this->getDefaultRegion(),
-            $storeId ?? $this->getDefaultStoreId()
-        );
-    }
-
-    /**
      * Operation primaryPaymentTransaction
      *
      * Generate a primary transaction.
@@ -100,11 +69,11 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function primaryPaymentTransaction(PrimaryTransaction $payload, $region = null)
+    public function submitPrimaryTransaction(PrimaryTransaction $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
-        return $this->client->primaryPaymentTransaction(
+        return $this->client->submitPrimaryTransaction(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
@@ -116,9 +85,9 @@ class PaymentApi extends ApiWrapper
     }
 
     /**
-     * Operation returnTransaction
+     * Secondary Transactions
      *
-     * Return/refund a transaction.
+     * Return/Void/PostAuth of a Transaction.
      *
      * @param  string $transactionId Gateway transaction identifier as returned in the parameter ipgTransactionId (required)
      * @param  SecondaryTransaction $payload payload (required)
@@ -129,11 +98,11 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function returnTransaction($transactionId, SecondaryTransaction $payload, $region = null, $storeId = null)
+     public function secondaryPaymentTransaction($transactionId, SecondaryTransaction $payload, $region = null, $storeId = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
-        return $this->client->returnTransaction(
+        return $this->client->submitSecondaryTransaction(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
@@ -144,7 +113,7 @@ class PaymentApi extends ApiWrapper
             $region ?? $this->getDefaultRegion(),
             $storeId ?? $this->getDefaultStoreId()
         );
-    }
+    } 
 
     /**
      * Operation transactionInquiry
@@ -159,38 +128,11 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
+
     public function transactionInquiry($transactionId, $region = null, $storeId = null)
     {
         $headers = $this->genHeaders();
         return $this->client->transactionInquiry(
-            $headers->getContentType(),
-            $headers->getClientRequestId(),
-            $headers->getApiKey(),
-            $headers->getTimestamp(),
-            $transactionId,
-            $headers->getMessageSignature(),
-            $region ?? $this->getDefaultRegion(),
-            $storeId ?? $this->getDefaultStoreId()
-        );
-    }
-
-    /**
-     * Operation voidTransaction
-     *
-     * Reverse a previous action on an existing transaction.
-     *
-     * @param  string $transactionId Gateway transaction identifier as returned in the parameter ipgTransactionId (required)
-     * @param  string $region The region where client wants to process the transaction (optional)
-     * @param  string $storeId An optional outlet ID for clients that support multiple stores in the same developer app (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     * @return TransactionResponse|ErrorResponse
-     */
-    public function voidTransaction($transactionId, $region = null, $storeId = null)
-    {
-        $headers = $this->genHeaders();
-        return $this->client->voidTransaction(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),

@@ -3,10 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Use this to indicate the type of tokenization source | 
-**paymentCard** | [**\FirstData\FirstApi\Client\Model\PaymentCard**](PaymentCard.md) |  | [optional] 
-**referencedOrder** | [**\FirstData\FirstApi\Client\Model\ReferencedOrder**](ReferencedOrder.md) |  | [optional] 
+**requestType** | **string** | Object name of tokenization request. | 
+**storeId** | **string** | An optional outlet ID for clients that support multiple stores in the same app. | [optional] 
 **billingAddress** | [**\FirstData\FirstApi\Client\Model\Address**](Address.md) |  | [optional] 
+**createToken** | [**\FirstData\FirstApi\Client\Model\CreatePaymentToken**](CreatePaymentToken.md) |  | 
+**accountVerification** | **bool** | If the account should be verified prior to token creation. | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

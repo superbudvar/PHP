@@ -1,14 +1,14 @@
 # FirstData\FirstApi\Client\AuthenticationApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://cert.api.firstdata.com/gateway/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AuthenticationAccessTokensPost**](AuthenticationApi.md#v1AuthenticationAccessTokensPost) | **POST** /v1/authentication/access-tokens | Generate an access token for user authentication.
+[**authenticationAccessTokensPost**](AuthenticationApi.md#authenticationAccessTokensPost) | **POST** /authentication/access-tokens | Generate an access token for user authentication.
 
 
-# **v1AuthenticationAccessTokensPost**
-> \FirstData\FirstApi\Client\Model\AccessTokenResponse v1AuthenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+# **authenticationAccessTokensPost**
+> \FirstData\FirstApi\Client\Model\AccessTokenResponse authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
 
 Generate an access token for user authentication.
 
@@ -24,17 +24,17 @@ $apiInstance = new FirstData\FirstApi\Client\Api\AuthenticationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = 'application/json'; // string | content type
+$contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-$apiKey = 'apiKey_example'; // string | 
+$apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+$messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 
 try {
-    $result = $apiInstance->v1AuthenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
+    $result = $apiInstance->authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationApi->v1AuthenticationAccessTokensPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationApi->authenticationAccessTokensPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -43,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**| content type | [default to &#39;application/json&#39;]
+ **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **string**|  |
+ **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
 
 ### Return type
 

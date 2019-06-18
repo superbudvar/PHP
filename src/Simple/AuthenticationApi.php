@@ -38,7 +38,7 @@ class AuthenticationApi extends ApiWrapper
     public function getAccessToken()
     {
         $headers = $this->genHeaders();
-        return $this->client->v1AuthenticationAccessTokensPost(
+        return $this->client->authenticationAccessTokensPost(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),

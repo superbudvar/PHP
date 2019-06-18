@@ -3,21 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transactionType** | [**\FirstData\FirstApi\Client\Model\TransactionType**](TransactionType.md) |  | 
+**requestType** | **string** | Object name of the primary transaction request. | 
 **storeId** | **string** | An optional outlet ID for clients that support multiple stores in the same app. | [optional] 
-**merchantTransactionId** | **string** | The unique merchant transaction ID from the Request header, if supplied. | [optional] 
+**merchantTransactionId** | **string** | The unique merchant transaction ID from the request header, if supplied. | [optional] 
+**transactionAmount** | [**\FirstData\FirstApi\Client\Model\Amount**](Amount.md) |  | 
 **transactionOrigin** | [**\FirstData\FirstApi\Client\Model\TransactionOrigin**](TransactionOrigin.md) |  | [optional] 
-**amount** | [**\FirstData\FirstApi\Client\Model\Amount**](Amount.md) |  | 
-**paymentMethod** | [**\FirstData\FirstApi\Client\Model\PaymentMethod**](PaymentMethod.md) |  | 
 **order** | [**\FirstData\FirstApi\Client\Model\Order**](Order.md) |  | [optional] 
-**basketItems** | [**\FirstData\FirstApi\Client\Model\BasketItem[]**](BasketItem.md) | Required for some payment methods (for example, Klarna) | [optional] 
-**splitShipment** | [**\FirstData\FirstApi\Client\Model\SplitShipment**](SplitShipment.md) |  | [optional] 
-**additionalDetails** | [**\FirstData\FirstApi\Client\Model\PrimaryTransactionAdditionalDetails**](PrimaryTransactionAdditionalDetails.md) |  | [optional] 
-**industrySpecificExtensions** | [**\FirstData\FirstApi\Client\Model\IndustrySpecificExtensions**](IndustrySpecificExtensions.md) |  | [optional] 
-**storedCredentials** | [**\FirstData\FirstApi\Client\Model\StoredCredential**](StoredCredential.md) |  | [optional] 
-**purchaseCard** | [**\FirstData\FirstApi\Client\Model\PurchaseCards**](PurchaseCards.md) |  | [optional] 
-**paymentFacilitator** | [**\FirstData\FirstApi\Client\Model\PaymentFacilitator**](PaymentFacilitator.md) |  | [optional] 
-**softDescriptor** | [**\FirstData\FirstApi\Client\Model\SoftDescriptor**](SoftDescriptor.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
