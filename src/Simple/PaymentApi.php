@@ -69,7 +69,7 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function submitPrimaryTransaction(PrimaryTransaction $payload, $region = null)
+    public function submitPrimaryTransaction(PrimaryTransaction $payload,$region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);

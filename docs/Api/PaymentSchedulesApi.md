@@ -198,7 +198,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePaymentSchedule**
-> \FirstData\FirstApi\Client\Model\PaymentSchedulesResponse updatePaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $paymentSchedulesRequest, $messageSignature, $region, $storeId)
+> \FirstData\FirstApi\Client\Model\PaymentSchedulesResponse updatePaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $paymentSchedulesRequest, $messageSignature, $region)
 
 Update a gateway payment schedule.
 
@@ -222,10 +222,9 @@ $orderId = 'orderId_example'; // string | Gateway order identifier as returned i
 $paymentSchedulesRequest = new \FirstData\FirstApi\Client\Model\PaymentSchedulesRequest(); // \FirstData\FirstApi\Client\Model\PaymentSchedulesRequest | Accepted request types: PaymentMethodPaymentSchedulesRequest and ReferencedOrderPaymentSchedulesRequest.
 $messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-$storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app.
 
 try {
-    $result = $apiInstance->updatePaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $paymentSchedulesRequest, $messageSignature, $region, $storeId);
+    $result = $apiInstance->updatePaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $paymentSchedulesRequest, $messageSignature, $region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentSchedulesApi->updatePaymentSchedule: ', $e->getMessage(), PHP_EOL;
@@ -245,7 +244,6 @@ Name | Type | Description  | Notes
  **paymentSchedulesRequest** | [**\FirstData\FirstApi\Client\Model\PaymentSchedulesRequest**](../Model/PaymentSchedulesRequest.md)| Accepted request types: PaymentMethodPaymentSchedulesRequest and ReferencedOrderPaymentSchedulesRequest. |
  **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
- **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app. | [optional]
 
 ### Return type
 
