@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipToAddress** | [**\FirstData\FirstApi\Client\Model\FraudOrderShipToAddress**](FraudOrderShipToAddress.md) |  | [optional] 
+**shipToAddress** | [**\FirstData\FirstApi\Client\Model\ShipToAddress**](ShipToAddress.md) |  | [optional] 
 **items** | [**\FirstData\FirstApi\Client\Model\FraudOrderItems[]**](FraudOrderItems.md) | The list of items included in the order. | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information about the order that might be helpful for fraud detection. | [optional] 
 

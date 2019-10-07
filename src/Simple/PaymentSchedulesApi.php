@@ -124,7 +124,7 @@ class PaymentSchedulesApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return RecurringPaymentDetailsResponse|ErrorResponse
      */
-    public function updatePaymentSchedule($orderId, PaymentSchedulesRequest $payload, $region = null, $storeId = null)
+    public function updatePaymentSchedule($orderId, PaymentSchedulesRequest $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
@@ -136,8 +136,8 @@ class PaymentSchedulesApi extends ApiWrapper
             $orderId,
             $payload,
             $headers->getMessageSignature(),
-            $region ?? $this->getDefaultRegion(),
-            $storeId ?? $this->getDefaultStoreId()
+            $region ?? $this->getDefaultRegion()
+           // $storeId ?? $this->getDefaultStoreId()
         );
     }
 }

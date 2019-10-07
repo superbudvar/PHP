@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deviceType** | **string** | Defines the type of this object. | 
 **deviceId** | **string** | The unique ID of the device. Must be unique for the entire system (not just within a specific merchant or industry). | 
-**networks** | [**\FirstData\FirstApi\Client\Model\DeviceNetworks[]**](DeviceNetworks.md) | Information about the networks associated with the device. | [optional] 
+**networks** | [**\FirstData\FirstApi\Client\Model\Items[]**](Items.md) | Information about the networks associated with the device. | [optional] 
 **latitude** | **float** | The GPS decimal latitude, ranging from (-90.0 to 90.0) where positive numbers indicate locations North of the equator. | [optional] 
 **longitude** | **float** | The GPS decimal longitude, ranging from (-180.0 to 180.0) where positive numbers indicate locations East of the IERS Reference Meridian. | [optional] 
 **imei** | **string** | The device&#39;s International Mobile Equipment Identity (IMEI) as described in IETF RFC7254. | [optional] 
