@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **avsResponse** | [**\FirstData\FirstApi\Client\Model\AVSResponse**](AVSResponse.md) |  | [optional] 
 **securityCodeResponse** | **string** | Code returned for CVV. | [optional] 
 **merchantAdviceCodeIndicator** | **string** | Code to map merchant advice code to ISO specification. | [optional] 
+**responseIndicator** | **string** | Indicates whether the transaction was routed through the payment card&#39;s own network or through a different network. | [optional] 
+**debitReceiptNumber** | **string** | Receipt number from debit network provider. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

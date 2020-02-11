@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **installmentOptions** | [**\FirstData\FirstApi\Client\Model\InstallmentOptions**](InstallmentOptions.md) |  | [optional] 
 **softDescriptor** | [**\FirstData\FirstApi\Client\Model\SoftDescriptor**](SoftDescriptor.md) |  | [optional] 
 **additionalDetails** | [**\FirstData\FirstApi\Client\Model\AdditionalDetails**](AdditionalDetails.md) |  | [optional] 
+**bancontactQR** | [**\FirstData\FirstApi\Client\Model\BancontactQR**](BancontactQR.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -75,7 +75,7 @@ class FraudDetectApi extends ApiWrapper
     	$strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
         return $this->client->fraudClientRegistrationPost(
-        	$headers->getContentType(),
+        	 $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
             $headers->getTimestamp(),
@@ -102,7 +102,7 @@ class FraudDetectApi extends ApiWrapper
     	$strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
         return $this->client->fraudPaymentRegistrationPost(
-        	$headers->getContentType(),
+        	 $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
             $headers->getTimestamp(),
