@@ -1,19 +1,18 @@
 {
-    "name": "/",
-    "version": "6.3.0",
-    "description": "",
-    "keywords": [
-        "swagger",
-        "php",
-        "sdk",
-        "api"
-    ],
-    "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "name": "first-data/gateway",
+    "version": "1.5.0",
+    "description": "PHP SDK to be used with a First Data Gateway account. This SDK has been created and packaged to offer the easiest way to integrate your application into the First Data Gateway. This SDK gives you the ability to run transactions such as sales, preauthorizations, postauthorizations, credits, voids, and returns; transaction inquiries; setting up scheduled payments and much more.",
+    "keywords": ["Payment", "Gateway", "SDK", "Developer", "First Data"],
+    "homepage": "https://docs.firstdata.com/org/gateway",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Pradyoth Rao",
+            "email": "pradyoth.rao@firstdata.com"
+        },
+        {
+            "name": "Brandon Garcia",
+            "email": "brandon.garcia@firstdata.com"
         }
     ],
     "require": {
@@ -26,8 +25,5 @@
     },
     "autoload": {
         "psr-4": { "FirstData\\FirstApi\\Client\\" : "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "FirstData\\FirstApi\\Client\\" : "test/" }
     }
 }
