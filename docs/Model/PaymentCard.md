@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **securityCode** | **string** | Card verification value/number. | [optional] 
 **cardFunction** | [**\FirstData\FirstApi\Client\Model\CardFunction**](CardFunction.md) |  | [optional] 
 **cardholderName** | **string** | Name of the cardholder. | [optional] 
-**authentication** | [**\FirstData\FirstApi\Client\Model\Authentication**](Authentication.md) |  | [optional] 
 **bin** | **string** | The payment card BIN. | [optional] 
 **last4** | **string** | The last 4 numbers of a payment card. | [optional] 
 **brand** | **string** | Required only if using dual branded card. | [optional] 

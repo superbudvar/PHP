@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **authenticationAccessTokensPost**
-> \FirstData\FirstApi\Client\Model\AccessTokenResponse authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature)
+> \FirstData\FirstApi\Client\Model\AccessTokenResponse authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $accessTokenRequest, $messageSignature)
 
 Generate an access token for user authentication.
 
@@ -28,10 +28,11 @@ $contentType = 'application/json'; // string | Content type.
 $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
 $apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+$accessTokenRequest = new \FirstData\FirstApi\Client\Model\AccessTokenRequest(); // \FirstData\FirstApi\Client\Model\AccessTokenRequest | Access token request
 $messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 
 try {
-    $result = $apiInstance->authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature);
+    $result = $apiInstance->authenticationAccessTokensPost($contentType, $clientRequestId, $apiKey, $timestamp, $accessTokenRequest, $messageSignature);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticationApi->authenticationAccessTokensPost: ', $e->getMessage(), PHP_EOL;
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **clientRequestId** | **string**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
  **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **accessTokenRequest** | [**\FirstData\FirstApi\Client\Model\AccessTokenRequest**](../Model/AccessTokenRequest.md)| Access token request |
  **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
 
 ### Return type
@@ -59,7 +61,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

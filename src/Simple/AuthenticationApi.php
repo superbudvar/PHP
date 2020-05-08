@@ -5,6 +5,7 @@ namespace FirstData\FirstApi\Client\Simple;
 use FirstData\FirstApi\Client\ApiException;
 use FirstData\FirstApi\Client\Model\AccessTokenResponse;
 use FirstData\FirstApi\Client\Model\ErrorResponse;
+use FirstData\FirstApi\Client\Model\AccessTokenRequest;
 use InvalidArgumentException;
 
 /**
@@ -35,14 +36,16 @@ class AuthenticationApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return AccessTokenResponse|ErrorResponse
      */
-    public function getAccessToken()
+    public function getAccessToken(AccessTokenRequest $payload)
     {
-        $headers = $this->genHeaders();
+        $strPayload = $this->serialize($payload);
+        $headers = $this->genHeaders($strPayload);
         return $this->client->authenticationAccessTokensPost(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
             $headers->getTimestamp(),
+            $payload,
             $headers->getMessageSignature()
         );
     }

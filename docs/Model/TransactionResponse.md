@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **transactionState** | **string** | The state of the transaction. | [optional] 
 **secure3dResponse** | [**\FirstData\FirstApi\Client\Model\Secure3dResponse**](Secure3dResponse.md) |  | [optional] 
 **redirectURL** | **string** | The endpoint redirection URL. | [optional] 
-**authenticationRedirect** | [**\FirstData\FirstApi\Client\Model\AuthenticationRedirect**](AuthenticationRedirect.md) |  | [optional] 
+**authenticationResponse** | [**\FirstData\FirstApi\Client\Model\Secure3DAuthenticationResponse**](Secure3DAuthenticationResponse.md) |  | [optional] 
 **schemeTransactionId** | **string** | The transaction ID received from schemes for the initial transaction of card on file flows. | [optional] 
 **processor** | [**\FirstData\FirstApi\Client\Model\ProcessorData**](ProcessorData.md) |  | [optional] 
 **additionalDetails** | [**\FirstData\FirstApi\Client\Model\AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  | [optional] 

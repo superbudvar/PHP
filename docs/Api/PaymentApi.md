@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **finalizeSecureTransaction**
-> \FirstData\FirstApi\Client\Model\TransactionResponse finalizeSecureTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $authenticationVerificationRequest, $messageSignature, $region)
+> \FirstData\FirstApi\Client\Model\TransactionResponse finalizeSecureTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $authenticationUpdateRequest, $messageSignature, $region)
 
 Update a 3DSecure or UnionPay payment and continue processing.
 
@@ -32,12 +32,12 @@ $clientRequestId = 'clientRequestId_example'; // string | A client-generated ID 
 $apiKey = 'apiKey_example'; // string | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
 $transactionId = 'transactionId_example'; // string | Gateway transaction identifier as returned in the parameter ipgTransactionId.
-$authenticationVerificationRequest = new \FirstData\FirstApi\Client\Model\AuthenticationVerificationRequest(); // \FirstData\FirstApi\Client\Model\AuthenticationVerificationRequest | Accepted request types: Secure3dAuthenticationVerificationRequest and UnionPayAuthenticationVerificationRequest.
+$authenticationUpdateRequest = new \FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest(); // \FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest | Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest.
 $messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 
 try {
-    $result = $apiInstance->finalizeSecureTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $authenticationVerificationRequest, $messageSignature, $region);
+    $result = $apiInstance->finalizeSecureTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $authenticationUpdateRequest, $messageSignature, $region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentApi->finalizeSecureTransaction: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
  **apiKey** | **string**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **int**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
  **transactionId** | **string**| Gateway transaction identifier as returned in the parameter ipgTransactionId. |
- **authenticationVerificationRequest** | [**\FirstData\FirstApi\Client\Model\AuthenticationVerificationRequest**](../Model/AuthenticationVerificationRequest.md)| Accepted request types: Secure3dAuthenticationVerificationRequest and UnionPayAuthenticationVerificationRequest. |
+ **authenticationUpdateRequest** | [**\FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest**](../Model/AuthenticationUpdateRequest.md)| Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest. |
  **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
 

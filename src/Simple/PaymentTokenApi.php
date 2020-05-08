@@ -89,4 +89,34 @@ class PaymentTokenApi extends ApiWrapper
             $storeId ?? $this->getDefaultStoreId()
         );
     }
+
+    /**
+     * Operation getPaymentTokenDetials
+     *
+     * Get payment token details
+     *
+     * @param  string $tokenId Identifies a payment token (required)
+     * @param  string $authorization The access token previously generated with the access-tokens call. Use the format &#39;Bearer {access-token}&#39;. (optional)
+     * @param  string $region The region where client wants to process the transaction (optional)
+     * @param  string $storeId An optional outlet ID for clients that support multiple stores in the same developer app (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return PaymentTokenizationResponse|ErrorResponse
+     */
+    public function getPaymentTokenDetails($tokenId, $authorization = null, $region = null, $storeId = null)
+    {
+        $headers = $this->genHeaders();
+        return $this->client->getPaymentTokenDetails(
+            $headers->getContentType(),
+            $headers->getClientRequestId(),
+            $headers->getApiKey(),
+            $headers->getTimestamp(),
+            $tokenId,
+            isset($authorization) ? null : $headers->getMessageSignature(),
+            $authorization,
+            $region ?? $this->getDefaultRegion(),
+            $storeId ?? $this->getDefaultStoreId()
+        );
+    }
 }

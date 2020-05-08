@@ -8,6 +8,7 @@ use FirstData\FirstApi\Client\Model\ErrorResponse;
 use FirstData\FirstApi\Client\Model\PrimaryTransaction;
 use FirstData\FirstApi\Client\Model\SecondaryTransaction;
 use FirstData\FirstApi\Client\Model\TransactionResponse;
+use FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest;
 use InvalidArgumentException;
 
 /**
@@ -41,7 +42,7 @@ class PaymentApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return TransactionResponse|ErrorResponse
      */
-    public function finalizeSecureTransaction($transactionId, AuthenticationVerificationRequest $payload, $region = null)
+    public function finalizeSecureTransaction($transactionId, AuthenticationUpdateRequest $payload, $region = null)
     {
         $strPayload = $this->serialize($payload);
         $headers = $this->genHeaders($strPayload);
