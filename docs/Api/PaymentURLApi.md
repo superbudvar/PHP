@@ -94,7 +94,7 @@ $timestamp = 56; // int | Epoch timestamp in milliseconds in the request from a 
 $messageSignature = 'messageSignature_example'; // string | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 $region = 'region_example'; // string | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 $storeId = 'storeId_example'; // string | An optional outlet ID for clients that support multiple stores in the same developer app.
-$transactionId = 'transactionId_example'; // string | Gateway transaction identifier as returned in the parameter ipgTransactionId.
+$transactionId = 'transactionId_example'; // string | Gateway transaction identifier as returned in the parameter ipgTransactionId or merchantTransactionId.
 $orderId = 'orderId_example'; // string | Gateway order identifier as returned in the parameter orderId.
 $paymentUrlId = 'paymentUrlId_example'; // string | The ID code from the payment URL.
 $transactionTime = 'transactionTime_example'; // string | The transaction time in seconds since epoch.
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
  **messageSignature** | **string**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **string**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
  **storeId** | **string**| An optional outlet ID for clients that support multiple stores in the same developer app. | [optional]
- **transactionId** | **string**| Gateway transaction identifier as returned in the parameter ipgTransactionId. | [optional]
+ **transactionId** | **string**| Gateway transaction identifier as returned in the parameter ipgTransactionId or merchantTransactionId. | [optional]
  **orderId** | **string**| Gateway order identifier as returned in the parameter orderId. | [optional]
  **paymentUrlId** | **string**| The ID code from the payment URL. | [optional]
  **transactionTime** | **string**| The transaction time in seconds since epoch. | [optional]

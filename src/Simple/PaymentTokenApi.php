@@ -5,6 +5,7 @@ namespace FirstData\FirstApi\Client\Simple;
 use FirstData\FirstApi\Client\ApiException;
 use FirstData\FirstApi\Client\Model\ErrorResponse;
 use FirstData\FirstApi\Client\Model\PaymentTokenizationRequest;
+use FirstData\FirstApi\Client\Model\PaymentCardPaymentTokenUpdateRequest;
 use FirstData\FirstApi\Client\Model\PaymentTokenizationResponse;
 use InvalidArgumentException;
 
@@ -91,9 +92,9 @@ class PaymentTokenApi extends ApiWrapper
     }
 
     /**
-     * Operation getPaymentTokenDetials
+     * Operation getPaymentTokenDetails
      *
-     * Get payment token details
+     * Get details of a payment token
      *
      * @param  string $tokenId Identifies a payment token (required)
      * @param  string $authorization The access token previously generated with the access-tokens call. Use the format &#39;Bearer {access-token}&#39;. (optional)
@@ -104,10 +105,11 @@ class PaymentTokenApi extends ApiWrapper
      * @throws InvalidArgumentException
      * @return PaymentTokenizationResponse|ErrorResponse
      */
+
     public function getPaymentTokenDetails($tokenId, $authorization = null, $region = null, $storeId = null)
     {
         $headers = $this->genHeaders();
-        return $this->client->getPaymentTokenDetails(
+        return $this->client->deletePaymentToken(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
@@ -119,4 +121,40 @@ class PaymentTokenApi extends ApiWrapper
             $storeId ?? $this->getDefaultStoreId()
         );
     }
+
+     /**
+     * Operation updatePaymentToken
+     *
+     * To update payment token information
+     *
+     * @param  PaymentCardPaymentTokenUpdateRequest $payload Payment Tokenization request (required)
+     * @param  string $authorization The access token previously generated with the access-tokens call. Use the format &#39;Bearer {access-token}&#39;. (optional)
+     * @param  string $region The region where client wants to process the transaction (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return PaymentTokenizationResponse|ErrorResponse
+     */
+    public function updatePaymentToken(PaymentCardPaymentTokenUpdateRequest $payload, $authorization = null, $region = null)
+    {
+        if (isset($authorization)) {
+          $headers = $this->genHeaders();
+        } else {
+          $strPayload = $this->serialize($payload);
+          $headers = $this->genHeaders($strPayload);
+        }
+        return $this->client->updatePaymentToken(
+            $headers->getContentType(),
+            $headers->getClientRequestId(),
+            $headers->getApiKey(),
+            $headers->getTimestamp(),
+            $payload,
+            isset($authorization) ? null : $headers->getMessageSignature(),
+            $authorization,
+            $region ?? $this->getDefaultRegion()
+        );
+    }
+
+
+
 }

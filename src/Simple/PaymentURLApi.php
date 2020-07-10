@@ -107,18 +107,18 @@ class PaymentURLApi extends ApiWrapper
      * @return PaymentUrlResponse|ErrorResponse
      */
 
-    public function paymentUrlDetail($fromDate,$toDate,$region = null,$storeId = null,$orderId = null,$merchantTransactionId = null,$status = null){
+    public function paymentUrlDetail($region = null,$storeId = null,$fromDate,$toDate,$orderId = null,$merchantTransactionId = null,$status = null){
         $headers = $this->genHeaders();
         return $this->client->paymentUrlDetail(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),
             $headers->getTimestamp(),
-            $fromDate,
-            $toDate,
             $headers->getMessageSignature(),
             $region ?? $this->getDefaultRegion(),
             $storeId ?? $this->getDefaultStoreId(),
+            $fromDate,
+            $toDate,
             $orderId,
             $merchantTransactionId,
             $status

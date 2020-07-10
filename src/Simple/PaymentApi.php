@@ -3,12 +3,11 @@
 namespace FirstData\FirstApi\Client\Simple;
 
 use FirstData\FirstApi\Client\ApiException;
-use FirstData\FirstApi\Client\Model\AuthenticationVerificationRequest;
+use FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest;
 use FirstData\FirstApi\Client\Model\ErrorResponse;
 use FirstData\FirstApi\Client\Model\PrimaryTransaction;
 use FirstData\FirstApi\Client\Model\SecondaryTransaction;
 use FirstData\FirstApi\Client\Model\TransactionResponse;
-use FirstData\FirstApi\Client\Model\AuthenticationUpdateRequest;
 use InvalidArgumentException;
 
 /**
@@ -36,7 +35,7 @@ class PaymentApi extends ApiWrapper
      * Update a 3DSecure or UnionPay payment and continue processing.
      *
      * @param  string $transactionId Gateway transaction identifier as returned in the parameter ipgTransactionId (required)
-     * @param  AuthenticationResponseVerificationRequest $payload payload (required)
+     * @param  AuthenticationUpdateRequest $payload payload (required)
      * @param  string $region The region where client wants to process the transaction (optional)
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

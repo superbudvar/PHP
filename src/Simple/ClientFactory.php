@@ -17,14 +17,14 @@ class ClientFactory
         return new AuthenticationApi($this->context);
     }
 
-    public function getCardInfoLookupApi()
+    public function getInformationLookupApi()
     {
-        return new CardInfoLookupApi($this->context);
+        return new InformationLookupApi($this->context);
     }
 
-    public function getCardVerificationApi()
+    public function getVerificationApi()
     {
-      return new CardVerificationApi($this->context);
+      return new VerificationApi($this->context);
     }
 
     public function getCurrencyConversionApi()

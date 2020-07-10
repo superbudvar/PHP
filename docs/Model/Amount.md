@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** | Amount total. | 
+**total** | **float** | Sub component values must add up to total amount. | 
 **currency** | **string** | ISO 4217 currency code. | 
 **components** | [**\FirstData\FirstApi\Client\Model\AmountComponents**](AmountComponents.md) |  | [optional] 
 
