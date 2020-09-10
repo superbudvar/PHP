@@ -1,6 +1,7 @@
-# CombinedMode
+# # CombinedMode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **logo** | [**\FirstData\FirstApi\Client\Model\Logo**](Logo.md) |  | [optional] 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **text** | [**\FirstData\FirstApi\Client\Model\Text**](Text.md) |  | [optional] 
 **button** | [**\FirstData\FirstApi\Client\Model\Button**](Button.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

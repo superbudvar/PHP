@@ -1,6 +1,7 @@
-# Order
+# # Order
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **orderId** | **string** | Client Order ID if supplied by client. | [optional] 
@@ -13,6 +14,6 @@ Name | Type | Description | Notes
 **additionalDetails** | [**\FirstData\FirstApi\Client\Model\AdditionalDetails**](AdditionalDetails.md) |  | [optional] 
 **bancontactQR** | [**\FirstData\FirstApi\Client\Model\BancontactQR**](BancontactQR.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

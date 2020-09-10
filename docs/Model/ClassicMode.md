@@ -1,6 +1,7 @@
-# ClassicMode
+# # ClassicMode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backgroundColor** | [**\FirstData\FirstApi\Client\Model\BackgroundColor**](BackgroundColor.md) |  | [optional] 
@@ -14,6 +15,6 @@ Name | Type | Description | Notes
 **anchor** | [**\FirstData\FirstApi\Client\Model\Properties**](Properties.md) |  | [optional] 
 **systemMessages** | [**\FirstData\FirstApi\Client\Model\Properties**](Properties.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

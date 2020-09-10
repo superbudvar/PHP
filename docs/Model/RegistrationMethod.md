@@ -1,6 +1,7 @@
-# RegistrationMethod
+# # RegistrationMethod
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **methodType** | **string** | Unique ID for the payment method type. | 
@@ -11,6 +12,6 @@ Name | Type | Description | Notes
 **card** | [**\FirstData\FirstApi\Client\Model\FraudRegistrationCard**](FraudRegistrationCard.md) |  | 
 **methodAddress** | [**\FirstData\FirstApi\Client\Model\FraudAddress**](FraudAddress.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

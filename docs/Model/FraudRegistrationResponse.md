@@ -1,6 +1,7 @@
-# FraudRegistrationResponse
+# # FraudRegistrationResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **correlationId** | **string** | The value used to track the transaction. | [optional] 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **fraudScore** | [**\FirstData\FirstApi\Client\Model\FraudScore**](FraudScore.md) |  | [optional] 
 **error** | [**\FirstData\FirstApi\Client\Model\FraudRegistrationError**](FraudRegistrationError.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# SecondaryTransaction
+# # SecondaryTransaction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **string** | Object name of the secondary transaction request. | 
@@ -9,6 +10,6 @@ Name | Type | Description | Notes
 **comments** | **string** | Comment for the secondary transaction. | [optional] 
 **order** | [**\FirstData\FirstApi\Client\Model\Order**](Order.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

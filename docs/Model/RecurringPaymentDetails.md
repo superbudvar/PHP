@@ -1,6 +1,7 @@
-# RecurringPaymentDetails
+# # RecurringPaymentDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **storeId** | **string** | Store ID number. | [optional] 
@@ -17,6 +18,6 @@ Name | Type | Description | Notes
 **state** | **string** | State of the recurring payment. | [optional] 
 **comments** | **string** | User supplied comments. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

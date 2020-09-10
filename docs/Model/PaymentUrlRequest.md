@@ -1,6 +1,7 @@
-# PaymentUrlRequest
+# # PaymentUrlRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **storeId** | **string** | An optional Outlet ID for clients that support multiple stores in the same developer app. | [optional] 
@@ -19,6 +20,6 @@ Name | Type | Description | Notes
 **hostedPaymentPageText** | **string** | The text to be displayed to the payer on the hosted payment page. | [optional] 
 **ip** | **string** | IPv4 or IPv6 network address. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

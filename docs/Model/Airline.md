@@ -1,6 +1,7 @@
-# Airline
+# # Airline
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **passengerName** | **string** | The passenger name associated with the transaction. | [optional] 
@@ -18,6 +19,6 @@ Name | Type | Description | Notes
 **ancillaryServiceCategory** | [**\FirstData\FirstApi\Client\Model\AirlineAncillaryServiceCategory[]**](AirlineAncillaryServiceCategory.md) | Identify the purchase of ancillary goods or services with a false value. If this element is not provided, the transaction is assumed to be a purchase of an airline ticket. | [optional] 
 **ticketPurchase** | **bool** | Identifies if the transaction is a ticket purchase. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# Properties
+# # Properties
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fontFace** | [**\FirstData\FirstApi\Client\Model\FontFace**](FontFace.md) |  | [optional] 
@@ -9,6 +10,6 @@ Name | Type | Description | Notes
 **fontColor** | **string** | Hexadecimal color value. | [optional] 
 **color** | **string** | Hexadecimal color value. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

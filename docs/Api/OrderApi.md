@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**submitSecondaryTransactionFromOrder**](OrderApi.md#submitSecondaryTransactionFromOrder) | **POST** /orders/{order-id} | Perform return or postAuth secondary transactions.
 
 
-# **orderInquiry**
+
+## orderInquiry
+
 > \FirstData\FirstApi\Client\Model\OrderResponse orderInquiry($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $messageSignature, $region, $storeId)
 
 Retrieve the state of an order.
@@ -16,9 +18,11 @@ Retrieve the state of an order.
 Use this query to get the current state of an existing order.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -45,6 +49,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -66,12 +71,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **submitSecondaryTransactionFromOrder**
+
+## submitSecondaryTransactionFromOrder
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse submitSecondaryTransactionFromOrder($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $secondaryTransaction, $messageSignature, $region)
 
 Perform return or postAuth secondary transactions.
@@ -79,9 +88,11 @@ Perform return or postAuth secondary transactions.
 Use this to perform a postAuth or return secondary transaction using order ID. Partial postAuths and returns are allowed.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -108,6 +119,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -129,8 +141,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

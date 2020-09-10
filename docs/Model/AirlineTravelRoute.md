@@ -1,6 +1,7 @@
-# AirlineTravelRoute
+# # AirlineTravelRoute
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **departureDate** | [**\DateTime**](\DateTime.md) | Date of departure. | [optional] 
@@ -13,6 +14,6 @@ Name | Type | Description | Notes
 **departureTax** | **float** | Fee charged by a country when a person leaves the country. | [optional] 
 **flightNumber** | **string** | The airline flight number associated with the ticket. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# ScoreOnlyRequest
+# # ScoreOnlyRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchantRef** | **string** | Merchant reference code. Used by FirstAPI and reflected in settlement records and Webhook notifications. Typically, the merchantRef field is the purchase order number or unique sequence value associated to a given transaction. | [optional] 
@@ -18,6 +19,6 @@ Name | Type | Description | Notes
 **order** | [**\FirstData\FirstApi\Client\Model\FraudOrder**](FraudOrder.md) |  | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

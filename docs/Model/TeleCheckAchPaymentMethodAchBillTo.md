@@ -1,6 +1,7 @@
-# TeleCheckAchPaymentMethodAchBillTo
+# # TeleCheckAchPaymentMethodAchBillTo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **string** | Customer billing first name. | [optional] 
@@ -14,6 +15,6 @@ Name | Type | Description | Notes
 **email** | **string** | Customer billing email. Required if performing an ICA transaction. | [optional] 
 **countryCode** | **string** | ISO country code. Required if performing an ICA transaction. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

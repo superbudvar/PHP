@@ -1,6 +1,7 @@
-# SenderInfo
+# # SenderInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Sender name. | 
@@ -14,6 +15,6 @@ Name | Type | Description | Notes
 **referenceNumber** | **string** | Sender reference number. | 
 **accountNumber** | **string** | Sender account number. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

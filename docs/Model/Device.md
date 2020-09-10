@@ -1,6 +1,7 @@
-# Device
+# # Device
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deviceType** | **string** | Defines the type of this object. | 
@@ -16,6 +17,6 @@ Name | Type | Description | Notes
 **malwareDetected** | **bool** | A flag indicating that malware was detected on the mobile phone. This flag should only be set to false if a test was performed and the result was negative. Leave unset otherwise. | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information about the device that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

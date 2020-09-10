@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**getExchangeRate**](CurrencyConversionApi.md#getExchangeRate) | **POST** /exchange-rates | Generate dynamic currency conversion transactions.
 
 
-# **getExchangeRate**
+
+## getExchangeRate
+
 > \FirstData\FirstApi\Client\Model\ExchangeRateResponse getExchangeRate($contentType, $clientRequestId, $apiKey, $timestamp, $exchangeRateRequest, $messageSignature, $region)
 
 Generate dynamic currency conversion transactions.
@@ -15,9 +17,11 @@ Generate dynamic currency conversion transactions.
 Sale, return and lookup exchange rate with dynamic currency conversion option.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\CurrencyConversionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -43,6 +47,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -63,8 +68,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

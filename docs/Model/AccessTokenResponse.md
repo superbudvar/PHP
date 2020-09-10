@@ -1,6 +1,7 @@
-# AccessTokenResponse
+# # AccessTokenResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tokenId** | **string** | Access token for authentication. | [optional] 
@@ -11,6 +12,6 @@ Name | Type | Description | Notes
 **algorithm** | **string** | Encyption algorithym. One way ECDH 256 bit key. | [optional] 
 **clientRequestId** | **string** | Echoes back the value from the request header for tracking. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

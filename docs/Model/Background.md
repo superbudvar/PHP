@@ -1,6 +1,7 @@
-# Background
+# # Background
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **topBar** | [**\FirstData\FirstApi\Client\Model\TopBar**](TopBar.md) |  | [optional] 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **content** | [**\FirstData\FirstApi\Client\Model\Content**](Content.md) |  | [optional] 
 **borders** | [**\FirstData\FirstApi\Client\Model\Borders**](Borders.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# StoreUrlConfiguration
+# # StoreUrlConfiguration
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | An optional outlet id for clients that support multiple stores in the same developer app. | 
@@ -12,6 +13,6 @@ Name | Type | Description | Notes
 **skipResultPageForFailure** | **bool** | Skip connect result page when transaction is not approved. | [optional] 
 **overwriteUrlAllowed** | **bool** | Overwrite URLs in database by those from request. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

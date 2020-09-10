@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**transactionInquiry**](PaymentApi.md#transactionInquiry) | **GET** /payments/{transaction-id} | Retrieve the state of a transaction.
 
 
-# **finalizeSecureTransaction**
+
+## finalizeSecureTransaction
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse finalizeSecureTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $authenticationUpdateRequest, $messageSignature, $region)
 
 Update a 3DSecure or UnionPay payment and continue processing.
@@ -18,9 +20,11 @@ Update a 3DSecure or UnionPay payment and continue processing.
 Use this to handle a 3DSecure redirect response or UnionPay authentication, updating the transaction and continuing processing.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -47,6 +51,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -68,12 +73,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **submitPrimaryTransaction**
+
+## submitPrimaryTransaction
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse submitPrimaryTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $primaryTransaction, $messageSignature, $region)
 
 Generate a primary transaction.
@@ -81,9 +90,11 @@ Generate a primary transaction.
 Use this to originate a financial transaction like a sale, preauthorization, or credit.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -109,6 +120,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -129,12 +141,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **submitSecondaryTransaction**
+
+## submitSecondaryTransaction
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse submitSecondaryTransaction($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $secondaryTransaction, $messageSignature, $region, $storeId)
 
 Perform a secondary transaction.
@@ -142,9 +158,11 @@ Perform a secondary transaction.
 Use this to perform a void, postAuth or return secondary transaction. Partial postAuths and returns are allowed.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -172,6 +190,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -194,12 +213,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **transactionInquiry**
+
+## transactionInquiry
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse transactionInquiry($contentType, $clientRequestId, $apiKey, $timestamp, $transactionId, $messageSignature, $region, $storeId)
 
 Retrieve the state of a transaction.
@@ -207,9 +230,11 @@ Retrieve the state of a transaction.
 Use this query to get the current state of an existing transaction.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -236,6 +261,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -257,8 +283,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

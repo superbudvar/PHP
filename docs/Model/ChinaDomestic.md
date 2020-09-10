@@ -1,6 +1,7 @@
-# ChinaDomestic
+# # ChinaDomestic
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **productCode** | **string** | Use this to indicate the product code according to the product category list. | 
@@ -11,7 +12,8 @@ Name | Type | Description | Notes
 **limitCardFunctionToDebit** | **bool** | Use this to limit card functions to debit cards. | [optional] 
 **customerId** | **string** | Use this to indicate the CUP customer ID if known. | [optional] 
 **bankId** | **string** | Use this to indicate the CUP bank ID if known. | [optional] 
+**openId** | **string** | Use this as unique identifier of WeChat user which is corresponded to the appid of merchant. The field is only applicable for ChinaDomesticPaymentMethod - brand &#x3D; WECHAT_DOMESTIC | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

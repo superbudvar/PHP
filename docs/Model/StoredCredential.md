@@ -1,6 +1,7 @@
-# StoredCredential
+# # StoredCredential
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sequence** | **string** | Indicates if the transaction is first or subsequent. Valid values are &#39;FIRST&#39; and &#39;SUBSEQUENT&#39;. | 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **referencedSchemeTransactionId** | **string** | The transaction ID received from schemes for the initial transaction. May be required if sequence is &#39;SUBSEQUENT&#39;. | [optional] 
 **initiator** | **string** | Indicates whether it is a merchant-initiated or explicitly consented to by card holder. Valid values are &#39;MERCHANT&#39; and &#39;CARDHOLDER&#39;. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

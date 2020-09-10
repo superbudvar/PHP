@@ -1,6 +1,7 @@
-# FraudAddress
+# # FraudAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **street** | **string** | First line of street address. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **country** | **string** | Country. | 
 **zipPostalCode** | **string** | Postal code. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

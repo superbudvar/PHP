@@ -1,6 +1,7 @@
-# TeleCheckAchPaymentMethod
+# # TeleCheckAchPaymentMethod
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **achType** | **string** | ACH application type values will be one of either TeleCheckICAPaymentMethod or TeleCheckCBPPaymentMethod. | 
@@ -23,6 +24,6 @@ Name | Type | Description | Notes
 **terminalCity** | **string** | Identifies the city where the original sale transaction occurred. | [optional] 
 **achBillTo** | [**\FirstData\FirstApi\Client\Model\TeleCheckAchPaymentMethodAchBillTo**](TeleCheckAchPaymentMethodAchBillTo.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

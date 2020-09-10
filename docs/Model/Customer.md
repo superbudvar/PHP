@@ -1,6 +1,7 @@
-# Customer
+# # Customer
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique ID for the customer, if registered. This field is required if the parent object is present. | 
@@ -16,6 +17,6 @@ Name | Type | Description | Notes
 **address** | [**\FirstData\FirstApi\Client\Model\CustomerAddress**](CustomerAddress.md) |  | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information about the customer that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

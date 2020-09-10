@@ -1,6 +1,7 @@
-# PaymentCard
+# # PaymentCard
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **string** | Payment card number. | 
@@ -12,6 +13,6 @@ Name | Type | Description | Notes
 **last4** | **string** | The last 4 numbers of a payment card. | [optional] 
 **brand** | **string** | Required only if using dual branded card. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

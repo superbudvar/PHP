@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**updatePaymentToken**](PaymentTokenApi.md#updatePaymentToken) | **PATCH** /payment-tokens | Update one or more payment tokens.
 
 
-# **createPaymentToken**
+
+## createPaymentToken
+
 > \FirstData\FirstApi\Client\Model\PaymentTokenizationResponse createPaymentToken($contentType, $clientRequestId, $apiKey, $timestamp, $paymentTokenizationRequest, $messageSignature, $authorization, $region)
 
 Create a payment token from a payment card.
@@ -18,9 +20,11 @@ Create a payment token from a payment card.
 Use this to create a payment token from a payment card.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -47,6 +51,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -68,12 +73,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **deletePaymentToken**
+
+## deletePaymentToken
+
 > \FirstData\FirstApi\Client\Model\PaymentTokenizationResponse deletePaymentToken($contentType, $clientRequestId, $apiKey, $timestamp, $tokenId, $messageSignature, $authorization, $region, $storeId)
 
 Delete a payment token.
@@ -81,9 +90,11 @@ Delete a payment token.
 Use this to delete a payment token.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -111,6 +122,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -133,12 +145,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **getPaymentTokenDetails**
+
+## getPaymentTokenDetails
+
 > \FirstData\FirstApi\Client\Model\PaymentTokenizationResponse getPaymentTokenDetails($contentType, $clientRequestId, $apiKey, $timestamp, $tokenId, $messageSignature, $authorization, $region, $storeId)
 
 Get payment card details associated with token.
@@ -146,9 +162,11 @@ Get payment card details associated with token.
 Get payment card details associated with token.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -176,6 +194,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -198,12 +217,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **updatePaymentToken**
+
+## updatePaymentToken
+
 > \FirstData\FirstApi\Client\Model\PaymentTokenUpdateResponse updatePaymentToken($contentType, $clientRequestId, $apiKey, $timestamp, $paymentCardPaymentTokenUpdateRequest, $messageSignature, $authorization, $region)
 
 Update one or more payment tokens.
@@ -211,9 +234,11 @@ Update one or more payment tokens.
 Use this update one or more payment tokens.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -240,6 +265,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -261,8 +287,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

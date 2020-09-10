@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**updatePaymentSchedule**](PaymentSchedulesApi.md#updatePaymentSchedule) | **PATCH** /payment-schedules/{order-id} | Update a gateway payment schedule.
 
 
-# **cancelPaymentSchedule**
+
+## cancelPaymentSchedule
+
 > \FirstData\FirstApi\Client\Model\PaymentSchedulesResponse cancelPaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $messageSignature, $region, $storeId)
 
 Cancel a gateway payment schedule.
@@ -18,9 +20,11 @@ Cancel a gateway payment schedule.
 Use this to cancel an existing gateway payment schedule.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -47,6 +51,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -68,12 +73,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **createPaymentSchedule**
+
+## createPaymentSchedule
+
 > \FirstData\FirstApi\Client\Model\PaymentSchedulesResponse createPaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $paymentSchedulesRequest, $messageSignature, $region)
 
 Create gateway payment schedule.
@@ -81,9 +90,11 @@ Create gateway payment schedule.
 Use this to create a gateway payment schedule.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -109,6 +120,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -129,12 +141,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **inquiryPaymentSchedule**
+
+## inquiryPaymentSchedule
+
 > \FirstData\FirstApi\Client\Model\RecurringPaymentDetailsResponse inquiryPaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $messageSignature, $region, $storeId)
 
 View a gateway payment schedule.
@@ -142,9 +158,11 @@ View a gateway payment schedule.
 Use this to view an existing gateway payment schedule.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -171,6 +189,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -192,12 +211,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **updatePaymentSchedule**
+
+## updatePaymentSchedule
+
 > \FirstData\FirstApi\Client\Model\PaymentSchedulesResponse updatePaymentSchedule($contentType, $clientRequestId, $apiKey, $timestamp, $orderId, $paymentSchedulesRequest, $messageSignature, $region)
 
 Update a gateway payment schedule.
@@ -205,9 +228,11 @@ Update a gateway payment schedule.
 Use this to update a gateway payment schedule.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -234,6 +259,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -255,8 +281,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

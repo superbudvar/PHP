@@ -1,6 +1,7 @@
-# PrimaryTransaction
+# # PrimaryTransaction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **string** | Object name of the primary transaction request. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **transactionOrigin** | [**\FirstData\FirstApi\Client\Model\TransactionOrigin**](TransactionOrigin.md) |  | [optional] 
 **order** | [**\FirstData\FirstApi\Client\Model\Order**](Order.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

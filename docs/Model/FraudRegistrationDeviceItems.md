@@ -1,6 +1,7 @@
-# FraudRegistrationDeviceItems
+# # FraudRegistrationDeviceItems
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **networkType** | **string** | Defines the type of network associated with the device. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **bssid** | **string** | The Wi-Fi networks Basic Service Set Identifier (BSSID). | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information about the network that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

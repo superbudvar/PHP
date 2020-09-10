@@ -1,6 +1,7 @@
-# SubMerchantData
+# # SubMerchantData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mcc** | **string** | Merchant category code. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **document** | [**\FirstData\FirstApi\Client\Model\Document**](Document.md) |  | [optional] 
 **merchantId** | **string** | Sub-merchant ID. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

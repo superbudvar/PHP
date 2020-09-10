@@ -1,6 +1,7 @@
-# PaymentSchedulesRequest
+# # PaymentSchedulesRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **string** | Object name of the payment schedules request. | 
@@ -20,6 +21,6 @@ Name | Type | Description | Notes
 **shipping** | [**\FirstData\FirstApi\Client\Model\Shipping**](Shipping.md) |  | [optional] 
 **comments** | **string** | User supplied comments. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

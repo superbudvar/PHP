@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**verifyCard**](VerificationApi.md#verifyCard) | **POST** /card-verification | Verify a payment card.
 
 
-# **verifyAccount**
+
+## verifyAccount
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse verifyAccount($contentType, $clientRequestId, $apiKey, $timestamp, $accountVerificationRequest, $messageSignature, $region)
 
 Verify a payment card or payment token.
@@ -16,9 +18,11 @@ Verify a payment card or payment token.
 Use this to perform an account verification for a payment card or payment token.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\VerificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -44,6 +48,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -64,12 +69,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **verifyCard**
+
+## verifyCard
+
 > \FirstData\FirstApi\Client\Model\TransactionResponse verifyCard($contentType, $clientRequestId, $apiKey, $timestamp, $cardVerificationRequest, $messageSignature, $region)
 
 Verify a payment card.
@@ -77,9 +86,11 @@ Verify a payment card.
 Use this to perform card verification for a payment card. Use the account-verification endpoint instead for this request.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\VerificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -105,6 +116,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -125,8 +137,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

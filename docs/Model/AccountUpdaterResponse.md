@@ -1,6 +1,7 @@
-# AccountUpdaterResponse
+# # AccountUpdaterResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **updatedCard** | **string** | Account updater replacement PAN or TransArmor token. | [optional] 
@@ -9,6 +10,6 @@ Name | Type | Description | Notes
 **updatedAccountStatus** | **string** | Status of the updated account. An account may have closed (C), the expiry date may have changed (E), the account may have changed (A), or the cardholder should be contacted (Q). | [optional] 
 **updatedAccountErrorCode** | **string** | Code for the error encountered when updating account. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

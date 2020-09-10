@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**scoreOnly**](FraudDetectApi.md#scoreOnly) | **POST** /fraud/score-only | Score a transaction for fraud.
 
 
-# **fraudClientRegistrationPost**
+
+## fraudClientRegistrationPost
+
 > \FirstData\FirstApi\Client\Model\FraudRegistrationResponse fraudClientRegistrationPost($contentType, $clientRequestId, $apiKey, $timestamp, $clientRegistration, $messageSignature, $region)
 
 Client registration for fraud detect transaction.
@@ -17,9 +19,11 @@ Client registration for fraud detect transaction.
 Use this to register client for fraud detect transaction.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\FraudDetectApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -45,6 +49,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -65,12 +70,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **fraudPaymentRegistrationPost**
+
+## fraudPaymentRegistrationPost
+
 > \FirstData\FirstApi\Client\Model\FraudRegistrationResponse fraudPaymentRegistrationPost($contentType, $clientRequestId, $apiKey, $timestamp, $paymentRegistration, $messageSignature, $region)
 
 Payment registration for fraud detect transaction.
@@ -78,9 +87,11 @@ Payment registration for fraud detect transaction.
 Use this to register payment for fraud detect transaction.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\FraudDetectApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -106,6 +117,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -126,12 +138,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **scoreOnly**
+
+## scoreOnly
+
 > \FirstData\FirstApi\Client\Model\ScoreOnlyResponse scoreOnly($contentType, $clientRequestId, $apiKey, $timestamp, $scoreOnlyRequest, $messageSignature, $region)
 
 Score a transaction for fraud.
@@ -139,9 +155,11 @@ Score a transaction for fraud.
 Use this to obtain a fraud score for a transaction.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\FraudDetectApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -167,6 +185,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -187,8 +206,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

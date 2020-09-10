@@ -1,6 +1,7 @@
-# CardInfo
+# # CardInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brand** | **string** | The card brand. | [optional] 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **issuerCountry** | **string** | The country of the issuer. | [optional] 
 **issuerName** | **string** | The name of the issuer. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**paymentUrlDetail**](PaymentURLApi.md#paymentUrlDetail) | **GET** /payment-url | Retrieve the state of payment URL.
 
 
-# **createPaymentUrl**
+
+## createPaymentUrl
+
 > \FirstData\FirstApi\Client\Model\PaymentUrlResponse createPaymentUrl($contentType, $clientRequestId, $apiKey, $timestamp, $paymentUrlRequest, $messageSignature, $region)
 
 Create a payment URL.
@@ -17,9 +19,11 @@ Create a payment URL.
 Use this to generate an embedding payment link.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentURLApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -45,6 +49,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -65,12 +70,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **deletePaymentUrl**
+
+## deletePaymentUrl
+
 > \FirstData\FirstApi\Client\Model\PaymentUrlResponse deletePaymentUrl($contentType, $clientRequestId, $apiKey, $timestamp, $messageSignature, $region, $storeId, $transactionId, $orderId, $paymentUrlId, $transactionTime)
 
 Delete a payment URL.
@@ -78,9 +87,11 @@ Delete a payment URL.
 Use this to delete an embedding payment link.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentURLApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -110,6 +121,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -134,12 +146,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **paymentUrlDetail**
+
+## paymentUrlDetail
+
 > \FirstData\FirstApi\Client\Model\PaymentUrlDetailResponse paymentUrlDetail($contentType, $clientRequestId, $apiKey, $timestamp, $fromDate, $toDate, $messageSignature, $region, $storeId, $orderId, $merchantTransactionId, $status)
 
 Retrieve the state of payment URL.
@@ -147,9 +163,11 @@ Retrieve the state of payment URL.
 Use this query to get the current state of an existing paymentURL.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\PaymentURLApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -180,6 +198,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -205,8 +224,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

@@ -1,6 +1,7 @@
-# Method
+# # Method
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **methodType** | **string** | Unique ID for the payment method type. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **provider** | **string** | The wallet provider. This field should be normalized before sending through the API. | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that can carry any additional information about the method that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

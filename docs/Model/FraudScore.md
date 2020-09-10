@@ -1,6 +1,7 @@
-# FraudScore
+# # FraudScore
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **score** | **string** | The score attributed to this request by our machine learning system, ranging from 0 (less likely to be fraud) to 1000 (more likely to be fraud). | [optional] 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **explanations** | **object[]** | Explanation of the fraud score applied consisting of a description, type of the explanation, and rule (if applicable). | [optional] 
 **recommendedDecision** | **string** | The score attributed to this request by our machine learning system, ranging from 0 (less likely to be fraud) to 1000 (more likely to be fraud). | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

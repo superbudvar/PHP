@@ -109,7 +109,7 @@ class PaymentTokenApi extends ApiWrapper
     public function getPaymentTokenDetails($tokenId, $authorization = null, $region = null, $storeId = null)
     {
         $headers = $this->genHeaders();
-        return $this->client->deletePaymentToken(
+        return $this->client->getPaymentTokenDetails(
             $headers->getContentType(),
             $headers->getClientRequestId(),
             $headers->getApiKey(),

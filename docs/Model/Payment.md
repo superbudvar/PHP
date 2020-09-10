@@ -1,6 +1,7 @@
-# Payment
+# # Payment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentType** | **string** | Defines the type of the payment. | 
@@ -15,6 +16,6 @@ Name | Type | Description | Notes
 **verificationCvv** | [**\FirstData\FirstApi\Client\Model\VerificationCvv**](VerificationCvv.md) |  | [optional] 
 **userDefined** | [**object**](.md) | A JSON object that carries any additional information that might be helpful for fraud detection. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

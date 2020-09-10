@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**lookupAccount**](InformationLookupApi.md#lookupAccount) | **POST** /account-information | Account information lookup.
 
 
-# **cardInfoLookup**
+
+## cardInfoLookup
+
 > \FirstData\FirstApi\Client\Model\CardInfoLookupResponse cardInfoLookup($contentType, $clientRequestId, $apiKey, $timestamp, $cardInfoLookupRequest, $messageSignature, $region)
 
 Card information lookup.
@@ -16,9 +18,11 @@ Card information lookup.
 Use this to look up card related information such as issuer country, card function and card brand.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\InformationLookupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -44,6 +48,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -64,12 +69,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **lookupAccount**
+
+## lookupAccount
+
 > \FirstData\FirstApi\Client\Model\CardInfoLookupResponse lookupAccount($contentType, $clientRequestId, $apiKey, $timestamp, $accountInfoLookupRequest, $messageSignature, $region)
 
 Account information lookup.
@@ -77,9 +86,11 @@ Account information lookup.
 Use this to look up card related information associated with a payment card or payment token.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new FirstData\FirstApi\Client\Api\InformationLookupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -105,6 +116,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**| Content type. | [default to &#39;application/json&#39;]
@@ -125,8 +137,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

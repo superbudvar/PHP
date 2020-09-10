@@ -1,6 +1,7 @@
-# PaymentDevice
+# # PaymentDevice
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deviceType** | **string** | The data format. | 
@@ -10,6 +11,6 @@ Name | Type | Description | Notes
 **cardFunction** | [**\FirstData\FirstApi\Client\Model\CardFunction**](CardFunction.md) |  | [optional] 
 **brand** | **string** | The card brand. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

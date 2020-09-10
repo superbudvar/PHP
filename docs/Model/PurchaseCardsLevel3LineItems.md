@@ -1,6 +1,7 @@
-# PurchaseCardsLevel3LineItems
+# # PurchaseCardsLevel3LineItems
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **commodityCode** | **string** | The commodity code used to classify the item purchased. | [optional] 
@@ -13,6 +14,6 @@ Name | Type | Description | Notes
 **discountAmountAndRate** | [**\FirstData\FirstApi\Client\Model\AdditionalAmountRate**](AdditionalAmountRate.md) |  | [optional] 
 **lineItemTotal** | **float** | Rate amount in 3 decimal 12 bytes total digit. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

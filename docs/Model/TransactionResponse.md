@@ -1,8 +1,12 @@
-# TransactionResponse
+# # TransactionResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientRequestId** | **string** | Echoes back the value in the request header for tracking. | [optional] 
+**apiTraceId** | **string** | Request identifier in API, can be used to request logs from the support team. | [optional] 
+**responseType** | [**\FirstData\FirstApi\Client\Model\ResponseType**](ResponseType.md) |  | [optional] 
 **ipgTransactionId** | **string** | The response transaction ID. | [optional] 
 **orderId** | **string** | Client order ID if supplied by client, otherwise the order ID. | [optional] 
 **transactionType** | [**\FirstData\FirstApi\Client\Model\TransactionType**](TransactionType.md) |  | [optional] 
@@ -25,7 +29,8 @@ Name | Type | Description | Notes
 **additionalDetails** | [**\FirstData\FirstApi\Client\Model\AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  | [optional] 
 **accountUpdaterResponse** | [**\FirstData\FirstApi\Client\Model\AccountUpdaterResponse**](AccountUpdaterResponse.md) |  | [optional] 
 **achResponse** | [**\FirstData\FirstApi\Client\Model\AchResponse**](AchResponse.md) |  | [optional] 
+**currencyConversionResponse** | [**\FirstData\FirstApi\Client\Model\CurrencyConversionResponse**](CurrencyConversionResponse.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

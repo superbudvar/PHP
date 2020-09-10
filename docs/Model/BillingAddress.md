@@ -1,6 +1,7 @@
-# BillingAddress
+# # BillingAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **string** | First name. | [optional] 
@@ -14,6 +15,6 @@ Name | Type | Description | Notes
 **phone** | [**\FirstData\FirstApi\Client\Model\Phone**](Phone.md) |  | [optional] 
 **zipPostalCode** | **string** | Postal code. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

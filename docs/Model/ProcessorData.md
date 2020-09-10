@@ -1,6 +1,7 @@
-# ProcessorData
+# # ProcessorData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **referenceNumber** | **string** | Reference transaction ID. | [optional] 
@@ -14,7 +15,8 @@ Name | Type | Description | Notes
 **merchantAdviceCodeIndicator** | **string** | Code to map merchant advice code to ISO specification. | [optional] 
 **responseIndicator** | **string** | Indicates whether the transaction was routed through the payment card&#39;s own network or through a different network. | [optional] 
 **debitReceiptNumber** | **string** | Receipt number from debit network provider. | [optional] 
+**transactionIntegrityClass** | **string** | MasterCard provided Transaction Integrity Class for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# BlockedItems
+# # BlockedItems
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **blockCard** | [**\FirstData\FirstApi\Client\Model\BlockCard**](BlockCard.md) |  | [optional] 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **blockName** | [**\FirstData\FirstApi\Client\Model\BlockName**](BlockName.md) |  | [optional] 
 **blockIPAddress** | [**\FirstData\FirstApi\Client\Model\BlockIPAddress**](BlockIPAddress.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
