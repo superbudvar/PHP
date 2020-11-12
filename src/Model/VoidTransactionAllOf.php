@@ -1,6 +1,6 @@
 <?php
 /**
- * Secure3D21AuthenticationUpdateRequestAllOf
+ * VoidTransactionAllOf
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \FirstData\FirstApi\Client\ObjectSerializer;
 
 /**
- * Secure3D21AuthenticationUpdateRequestAllOf Class Doc Comment
+ * VoidTransactionAllOf Class Doc Comment
  *
  * @category Class
  * @package  FirstData\FirstApi\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, ArrayAccess
+class VoidTransactionAllOf implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Secure3D21AuthenticationUpdateRequest_allOf';
+    protected static $openAPIModelName = 'VoidTransaction_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'methodNotificationStatus' => 'string',
-        'acsResponse' => '\FirstData\FirstApi\Client\Model\ACSResponse'
+        'transactionAmount' => '\FirstData\FirstApi\Client\Model\Amount'
     ];
 
     /**
@@ -67,8 +66,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'methodNotificationStatus' => null,
-        'acsResponse' => null
+        'transactionAmount' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'methodNotificationStatus' => 'methodNotificationStatus',
-        'acsResponse' => 'acsResponse'
+        'transactionAmount' => 'transactionAmount'
     ];
 
     /**
@@ -108,8 +105,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'methodNotificationStatus' => 'setMethodNotificationStatus',
-        'acsResponse' => 'setAcsResponse'
+        'transactionAmount' => 'setTransactionAmount'
     ];
 
     /**
@@ -118,8 +114,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'methodNotificationStatus' => 'getMethodNotificationStatus',
-        'acsResponse' => 'getAcsResponse'
+        'transactionAmount' => 'getTransactionAmount'
     ];
 
     /**
@@ -163,25 +158,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
         return self::$openAPIModelName;
     }
 
-    const METHOD_NOTIFICATION_STATUS_RECEIVED = 'RECEIVED';
-    const METHOD_NOTIFICATION_STATUS_EXPECTED_BUT_NOT_RECEIVED = 'EXPECTED_BUT_NOT_RECEIVED';
-    const METHOD_NOTIFICATION_STATUS_NOT_EXPECTED = 'NOT_EXPECTED';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMethodNotificationStatusAllowableValues()
-    {
-        return [
-            self::METHOD_NOTIFICATION_STATUS_RECEIVED,
-            self::METHOD_NOTIFICATION_STATUS_EXPECTED_BUT_NOT_RECEIVED,
-            self::METHOD_NOTIFICATION_STATUS_NOT_EXPECTED,
-        ];
-    }
     
 
     /**
@@ -199,8 +177,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['methodNotificationStatus'] = isset($data['methodNotificationStatus']) ? $data['methodNotificationStatus'] : null;
-        $this->container['acsResponse'] = isset($data['acsResponse']) ? $data['acsResponse'] : null;
+        $this->container['transactionAmount'] = isset($data['transactionAmount']) ? $data['transactionAmount'] : null;
     }
 
     /**
@@ -211,14 +188,6 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getMethodNotificationStatusAllowableValues();
-        if (!is_null($this->container['methodNotificationStatus']) && !in_array($this->container['methodNotificationStatus'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'methodNotificationStatus', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -236,58 +205,25 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
 
 
     /**
-     * Gets methodNotificationStatus
+     * Gets transactionAmount
      *
-     * @return string|null
+     * @return \FirstData\FirstApi\Client\Model\Amount|null
      */
-    public function getMethodNotificationStatus()
+    public function getTransactionAmount()
     {
-        return $this->container['methodNotificationStatus'];
+        return $this->container['transactionAmount'];
     }
 
     /**
-     * Sets methodNotificationStatus
+     * Sets transactionAmount
      *
-     * @param string|null $methodNotificationStatus Indicates how the merchant received the 3DS method.
+     * @param \FirstData\FirstApi\Client\Model\Amount|null $transactionAmount transactionAmount
      *
      * @return $this
      */
-    public function setMethodNotificationStatus($methodNotificationStatus)
+    public function setTransactionAmount($transactionAmount)
     {
-        $allowedValues = $this->getMethodNotificationStatusAllowableValues();
-        if (!is_null($methodNotificationStatus) && !in_array($methodNotificationStatus, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'methodNotificationStatus', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['methodNotificationStatus'] = $methodNotificationStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets acsResponse
-     *
-     * @return \FirstData\FirstApi\Client\Model\ACSResponse|null
-     */
-    public function getAcsResponse()
-    {
-        return $this->container['acsResponse'];
-    }
-
-    /**
-     * Sets acsResponse
-     *
-     * @param \FirstData\FirstApi\Client\Model\ACSResponse|null $acsResponse acsResponse
-     *
-     * @return $this
-     */
-    public function setAcsResponse($acsResponse)
-    {
-        $this->container['acsResponse'] = $acsResponse;
+        $this->container['transactionAmount'] = $transactionAmount;
 
         return $this;
     }

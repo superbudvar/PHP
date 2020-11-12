@@ -1,6 +1,6 @@
 <?php
 /**
- * Secure3D21AuthenticationUpdateRequestAllOf
+ * ReceiptLine
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \FirstData\FirstApi\Client\ObjectSerializer;
 
 /**
- * Secure3D21AuthenticationUpdateRequestAllOf Class Doc Comment
+ * ReceiptLine Class Doc Comment
  *
  * @category Class
+ * @description Represents a line in the receipt response.
  * @package  FirstData\FirstApi\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, ArrayAccess
+class ReceiptLine implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Secure3D21AuthenticationUpdateRequest_allOf';
+    protected static $openAPIModelName = 'ReceiptLine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'methodNotificationStatus' => 'string',
-        'acsResponse' => '\FirstData\FirstApi\Client\Model\ACSResponse'
+        'endOfLine' => 'bool',
+        'text' => 'string'
     ];
 
     /**
@@ -67,8 +68,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'methodNotificationStatus' => null,
-        'acsResponse' => null
+        'endOfLine' => null,
+        'text' => null
     ];
 
     /**
@@ -98,8 +99,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'methodNotificationStatus' => 'methodNotificationStatus',
-        'acsResponse' => 'acsResponse'
+        'endOfLine' => 'endOfLine',
+        'text' => 'text'
     ];
 
     /**
@@ -108,8 +109,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'methodNotificationStatus' => 'setMethodNotificationStatus',
-        'acsResponse' => 'setAcsResponse'
+        'endOfLine' => 'setEndOfLine',
+        'text' => 'setText'
     ];
 
     /**
@@ -118,8 +119,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'methodNotificationStatus' => 'getMethodNotificationStatus',
-        'acsResponse' => 'getAcsResponse'
+        'endOfLine' => 'getEndOfLine',
+        'text' => 'getText'
     ];
 
     /**
@@ -163,25 +164,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
         return self::$openAPIModelName;
     }
 
-    const METHOD_NOTIFICATION_STATUS_RECEIVED = 'RECEIVED';
-    const METHOD_NOTIFICATION_STATUS_EXPECTED_BUT_NOT_RECEIVED = 'EXPECTED_BUT_NOT_RECEIVED';
-    const METHOD_NOTIFICATION_STATUS_NOT_EXPECTED = 'NOT_EXPECTED';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getMethodNotificationStatusAllowableValues()
-    {
-        return [
-            self::METHOD_NOTIFICATION_STATUS_RECEIVED,
-            self::METHOD_NOTIFICATION_STATUS_EXPECTED_BUT_NOT_RECEIVED,
-            self::METHOD_NOTIFICATION_STATUS_NOT_EXPECTED,
-        ];
-    }
     
 
     /**
@@ -199,8 +183,8 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['methodNotificationStatus'] = isset($data['methodNotificationStatus']) ? $data['methodNotificationStatus'] : null;
-        $this->container['acsResponse'] = isset($data['acsResponse']) ? $data['acsResponse'] : null;
+        $this->container['endOfLine'] = isset($data['endOfLine']) ? $data['endOfLine'] : true;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
     }
 
     /**
@@ -212,14 +196,9 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getMethodNotificationStatusAllowableValues();
-        if (!is_null($this->container['methodNotificationStatus']) && !in_array($this->container['methodNotificationStatus'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'methodNotificationStatus', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['text'] === null) {
+            $invalidProperties[] = "'text' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -236,58 +215,49 @@ class Secure3D21AuthenticationUpdateRequestAllOf implements ModelInterface, Arra
 
 
     /**
-     * Gets methodNotificationStatus
+     * Gets endOfLine
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getMethodNotificationStatus()
+    public function getEndOfLine()
     {
-        return $this->container['methodNotificationStatus'];
+        return $this->container['endOfLine'];
     }
 
     /**
-     * Sets methodNotificationStatus
+     * Sets endOfLine
      *
-     * @param string|null $methodNotificationStatus Indicates how the merchant received the 3DS method.
+     * @param bool|null $endOfLine Flag to indicate if the text ends at the end of this receipt line.
      *
      * @return $this
      */
-    public function setMethodNotificationStatus($methodNotificationStatus)
+    public function setEndOfLine($endOfLine)
     {
-        $allowedValues = $this->getMethodNotificationStatusAllowableValues();
-        if (!is_null($methodNotificationStatus) && !in_array($methodNotificationStatus, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'methodNotificationStatus', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['methodNotificationStatus'] = $methodNotificationStatus;
+        $this->container['endOfLine'] = $endOfLine;
 
         return $this;
     }
 
     /**
-     * Gets acsResponse
+     * Gets text
      *
-     * @return \FirstData\FirstApi\Client\Model\ACSResponse|null
+     * @return string
      */
-    public function getAcsResponse()
+    public function getText()
     {
-        return $this->container['acsResponse'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets acsResponse
+     * Sets text
      *
-     * @param \FirstData\FirstApi\Client\Model\ACSResponse|null $acsResponse acsResponse
+     * @param string $text Text that represents a line of the actual receipt data, that can be printed out.
      *
      * @return $this
      */
-    public function setAcsResponse($acsResponse)
+    public function setText($text)
     {
-        $this->container['acsResponse'] = $acsResponse;
+        $this->container['text'] = $text;
 
         return $this;
     }
