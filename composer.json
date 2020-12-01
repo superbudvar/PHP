@@ -20,7 +20,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2",
-        "ramsey/uuid": "^3.7"
+        "ramsey/uuid": "^3 || ^4"
     },
     "autoload": {
         "psr-4": { "FirstData\\FirstApi\\Client\\" : "src/" }
